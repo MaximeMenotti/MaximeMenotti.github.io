@@ -3,10 +3,10 @@ jQuery(function($) {
       var pannel = $(evt.currentTarget).next();
       if (pannel.is(':hidden')) {
         pannel.slideDown('slow');
-        $(evt.currentTarget).parent().toggleClass('active');
+        pannel.parent().toggleClass('active');
       } else {
         pannel.slideUp('slow');
-        $(evt.currentTarget).parent().removeClass('active');
+        pannel.parent().removeClass('active');
       }
     });
 
@@ -17,9 +17,9 @@ jQuery(function($) {
     function scrollToPosition(evt) {
         evt.preventDefault();
         var target = $(evt.currentTarget).attr('href');
-        console.log(target)
+        console.log(target);
         $('html, body').animate({
             scrollTop: $(target).offset().top
         }, 'slow');
     }
-})(jQuery);
+});

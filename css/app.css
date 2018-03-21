@@ -1,3 +1,50 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 @font-face {
   font-family: "Roboto Condensed";
   font-style: normal;
@@ -10,173 +57,205 @@
   font-weight: 400;
   src: local("Roboto Condensed Regular"), local("RobotoCondensed-Regular"), url("font/RobotoCondensed-Regular.ttf") format("truetype"); }
 
-.container .teaserlist {
+main .teaserlist {
   display: flex;
   flex-direction: row;
   justify-content: center; }
-  .container .teaserlist .teaser {
+  main .teaserlist .teaser {
     width: 215px;
     margin: 10px;
     box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
-    position: relative; }
-    .container .teaserlist .teaser:hover {
+    position: relative;
+    transition: all .3s; }
+    main .teaserlist .teaser:hover {
       box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2); }
-    .container .teaserlist .teaser .container-media {
-      width: 100%;
+      main .teaserlist .teaser:hover > p {
+        color: #fff; }
+      main .teaserlist .teaser:hover .teaser-inner.content p {
+        color: #4a4a4a; }
+      main .teaserlist .teaser:hover .teaser-inner.content .description p {
+        color: #4a4a4a; }
+      main .teaserlist .teaser:hover .teaser-inner.review {
+        color: #4a4a4a; }
+    main .teaserlist .teaser > p {
+      transition: color .3s;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 14px;
+      color: #fff;
+      text-transform: uppercase;
+      text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      z-index: 2; }
+    main .teaserlist .teaser > a {
+      display: block;
+      position: absolute;
+      z-index: 3;
+      height: 100%;
+      width: 100%; }
+    main .teaserlist .teaser .teaser-inner:not(.media) {
+      padding: 10px; }
+    main .teaserlist .teaser .teaser-inner.media {
+      width: 215px;
       height: 125px;
       position: relative;
       overflow: hidden;
       clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%); }
-      .container .teaserlist .teaser .container-media img {
-        max-height: 170px;
-        width: auto;
-        height: auto; }
-    .container .teaserlist .teaser .container-content {
-      padding: 0 10px;
-      font-size: 12px; }
-      .container .teaserlist .teaser .container-content .title {
-        margin: 15px 0 0; }
-        .container .teaserlist .teaser .container-content .title a {
-          font-size: 16px;
-          font-weight: normal;
-          color: black;
-          font-size: 16px;
-          text-decoration: none;
-          display: block;
-          transition: color .3s; }
-          .container .teaserlist .teaser .container-content .title a:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            background-color: transparent;
-            z-index: 10; }
-      .container .teaserlist .teaser .container-content .description {
-        margin-top: 40px;
-        color: grey; }
-        .container .teaserlist .teaser .container-content .description .training-teaser-row {
-          margin: 15px; }
-          .container .teaserlist .teaser .container-content .description .training-teaser-row img {
-            margin-right: 20px; }
-      .container .teaserlist .teaser .container-content .review {
-        margin: 20px 10px;
-        text-align: right;
-        color: gray; }
-
-.container .container_week .week .title_week {
-  font-size: 18px;
-  font-weight: 300;
-  color: #000; }
-
-.container .container_week .week .brick {
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); }
-  .container .container_week .week .brick:hover, .container .container_week .week .brick.active {
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); }
-  .container .container_week .week .brick:hover .accordion {
-    background-color: #fff; }
-    .container .container_week .week .brick:hover .accordion .title {
-      color: #000; }
-    .container .container_week .week .brick:hover .accordion .seance_wrapper {
-      border-right: 1px solid #888; }
-      .container .container_week .week .brick:hover .accordion .seance_wrapper .seance_number {
-        color: #000; }
-      .container .container_week .week .brick:hover .accordion .seance_wrapper .seance {
-        color: #000; }
-    .container .container_week .week .brick:hover .accordion:after {
-      color: #000; }
-  .container .container_week .week .brick.active .accordion {
-    background-color: #0082C3; }
-    .container .container_week .week .brick.active .accordion .title {
-      color: #fff; }
-    .container .container_week .week .brick.active .accordion .seance_wrapper {
-      border-right: 1px solid #fff; }
-      .container .container_week .week .brick.active .accordion .seance_wrapper .seance_number {
-        color: #fff; }
-      .container .container_week .week .brick.active .accordion .seance_wrapper .seance {
-        color: #fff; }
-    .container .container_week .week .brick.active .accordion:after {
-      transform: rotate(-180deg) translate(0px, 5px);
-      color: #fff; }
-  .container .container_week .week .brick .accordion {
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    background-color: #fff;
-    padding: 18px;
-    cursor: pointer;
-    width: 100%;
-    margin: 10px 0 0;
-    position: relative;
-    transition: all 0.3s; }
-    .container .container_week .week .brick .accordion:after {
-      content: "^";
-      position: absolute;
-      right: 20px;
-      top: auto;
-      transform: rotate(90deg);
-      transition: transform 0.3s ease-in-out;
-      color: #888; }
-    .container .container_week .week .brick .accordion .seance_wrapper {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding-right: 10px;
-      margin-right: 10px;
-      border-right: 1px solid #888;
-      color: #888;
-      text-align: center; }
-      .container .container_week .week .brick .accordion .seance_wrapper > * {
-        transition: color 0.3s; }
-      .container .container_week .week .brick .accordion .seance_wrapper .seance {
-        font-size: 16px; }
-      .container .container_week .week .brick .accordion .seance_wrapper .seance_number {
-        color: #888;
-        font-size: 2em; }
-    .container .container_week .week .brick .accordion .title {
-      transition: color 0.3s;
+      main .teaserlist .teaser .teaser-inner.media img {
+        max-width: 100%;
+        height: auto;
+        width: auto; }
+    main .teaserlist .teaser .teaser-inner.content p {
+      margin: 15px 0 0;
       font-size: 16px;
-      flex: 1;
+      font-weight: normal;
+      color: #888;
+      font-size: 16px;
+      transition: all .3s; }
+    main .teaserlist .teaser .teaser-inner.content .description {
+      margin-top: 40px; }
+      main .teaserlist .teaser .teaser-inner.content .description p {
+        position: relative;
+        padding-left: 40px;
+        margin-top: 15px;
+        background-repeat: no-repeat;
+        background-position: left top;
+        color: #888;
+        font-size: 12px;
+        transition: all .3s; }
+        main .teaserlist .teaser .teaser-inner.content .description p.difficulty {
+          background-image: url("/data/volume.png"); }
+        main .teaserlist .teaser .teaser-inner.content .description p.length, main .teaserlist .teaser .teaser-inner.content .description p.frequency {
+          background-image: url("/data/daily-calendar-pixel.png"); }
+    main .teaserlist .teaser .teaser-inner.review {
+      transition: all .3s;
+      margin: 20px 10px;
+      text-align: right;
       color: #888; }
-  .container .container_week .week .brick .panel {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0 18px;
-    overflow: hidden;
-    display: none; }
 
-.container .menu ul {
+main .weeks .week {
+  margin: 30px 10px; }
+  main .weeks .week > p {
+    text-align: center;
+    margin-bottom: 10px; }
+    main .weeks .week > p.title {
+      font-size: 30px;
+      font-weight: bold;
+      color: #4a4a4a; }
+    main .weeks .week > p.subtitle {
+      font-size: 14px;
+      font-weight: 300;
+      color: #4a4a4a; }
+  main .weeks .week > .brick {
+    margin-top: 30px;
+    transition: all .3s;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); }
+    main .weeks .week > .brick:hover, main .weeks .week > .brick.active {
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2); }
+    main .weeks .week > .brick:hover .accordion {
+      background-color: #fff; }
+      main .weeks .week > .brick:hover .accordion .title {
+        color: #4a4a4a; }
+      main .weeks .week > .brick:hover .accordion .seance_wrapper {
+        border-right: 1px solid #888; }
+        main .weeks .week > .brick:hover .accordion .seance_wrapper .seance_number {
+          color: #4a4a4a; }
+        main .weeks .week > .brick:hover .accordion .seance_wrapper > p {
+          color: #4a4a4a; }
+      main .weeks .week > .brick:hover .accordion:after {
+        color: #4a4a4a; }
+    main .weeks .week > .brick.active .accordion {
+      background-color: #0082c3; }
+      main .weeks .week > .brick.active .accordion .title {
+        color: #fff; }
+      main .weeks .week > .brick.active .accordion .seance_wrapper {
+        border-right: 1px solid #fff; }
+        main .weeks .week > .brick.active .accordion .seance_wrapper > p {
+          color: #fff; }
+        main .weeks .week > .brick.active .accordion .seance_wrapper .seance_number {
+          color: #fff; }
+      main .weeks .week > .brick.active .accordion:after {
+        transform: rotate(-180deg) translate(0px, 5px);
+        color: #fff; }
+    main .weeks .week > .brick ~ .brick {
+      margin-top: 0; }
+    main .weeks .week > .brick .accordion {
+      display: flex;
+      align-items: center;
+      padding: 18px;
+      cursor: pointer;
+      width: calc(100% - 36px);
+      margin-top: 10px;
+      position: relative;
+      transition: all 0.3s;
+      background-color: #fff; }
+      main .weeks .week > .brick .accordion:after {
+        content: "^";
+        position: absolute;
+        right: 20px;
+        top: auto;
+        transform: rotate(90deg);
+        transition: transform 0.3s ease-in-out;
+        color: #888; }
+      main .weeks .week > .brick .accordion .seance_wrapper {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-right: 10px;
+        margin-right: 10px;
+        text-align: center;
+        border-right: 1px solid #888;
+        color: #888; }
+        main .weeks .week > .brick .accordion .seance_wrapper > div, main .weeks .week > .brick .accordion .seance_wrapper > p {
+          transition: color 0.3s; }
+        main .weeks .week > .brick .accordion .seance_wrapper .seance {
+          font-size: 16px; }
+        main .weeks .week > .brick .accordion .seance_wrapper .seance_number {
+          color: #888;
+          font-size: 2em; }
+      main .weeks .week > .brick .accordion .title {
+        transition: color 0.3s;
+        flex: 1;
+        font-size: 16px;
+        color: #888; }
+    main .weeks .week > .brick .panel {
+      width: 100%;
+      padding: 20px;
+      display: none; }
+
+main .menu {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 0; }
-
-.container .menu li {
-  list-style: none;
-  text-align: center;
-  line-height: 50px;
-  margin-right: 8px; }
-  .container .menu li a {
-    text-decoration: none;
-    color: #FFFFFF;
-    background-color: #aaa;
-    display: block;
-    border-radius: 100px;
-    width: 50px;
-    height: 50px;
-    box-shadow: 2px 2px 8px #999; }
-    .container .menu li a:hover {
+  margin: 30px 0; }
+  main .menu > li {
+    list-style: none;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 8px; }
+    main .menu > li > a {
+      font-size: 18px;
       text-decoration: none;
-      box-shadow: 3px 3px 8px #999;
-      transition: all 0.5s;
-      transform: scale(1.05); }
+      font-weight: bold;
+      color: #4a4a4a;
+      background-color: #fff;
+      display: block;
+      border-radius: 80px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #4a4a4a; }
+      main .menu > li > a:hover {
+        text-decoration: none;
+        transition: all 0.3s;
+        border: 1px solid #0082c3;
+        background-color: #0082c3;
+        color: #fff; }
 
 body {
   font-family: 'Roboto Condensed'; }
 
-.container {
+main {
   max-width: 940px;
   margin: 0 auto; }
 

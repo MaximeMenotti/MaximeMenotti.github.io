@@ -1,19 +1,32 @@
 @import "variables.scss";
 
-.container {
-    .container_week {
+main {
+    .weeks {
         .week {
-            .title_week {
-                font-size: $title-week-font-size;
-                font-weight: $title-week-fontweight;
-                color: $title-week-color;
+            margin: 30px 10px;
+            > p {
+                text-align: center;
+                margin-bottom: 10px;
+                &.title {
+                    font-size: $title-week-font-size;
+                    font-weight: $title-week-fontweight;
+                    color: $title-week-color;
+                }
+                &.subtitle { 
+                    font-size: $subtitle-week-font-size;
+                    font-weight: $subtitle-week-fontweight;
+                    color: $subtitle-week-color;
+                }
             }
+            
 
-            .brick {
-                box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.10);
+            > .brick {
+                margin-top: 30px;
+                transition: all .3s;
+                box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.10);
                 &:hover, 
                 &.active {
-                    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.20);
+                    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.20);
                 }
                 &:hover {
                     .accordion {
@@ -26,7 +39,7 @@
                             .seance_number {
                                 color: $accordion-seance-number-color-hover;
                             }
-                            .seance {
+                            > p {
                                 color: $accordion-seance-color-hover;
                             }
                         }
@@ -43,11 +56,12 @@
                         }
                         .seance_wrapper {
                             border-right: $accordion-separator-size solid $accordion-separator-color-active;
+                            
+                            > p { 
+                                color: $accordion-seance-color-active;
+                            }
                             .seance_number{
                                 color: $accordion-seance-number-color-active;
-                            }
-                            .seance {
-                                color: $accordion-seance-color-active;
                             }
                         }
                         &:after {
@@ -56,18 +70,20 @@
                         }
                     }
                 }
+                ~ .brick {
+                    margin-top: 0;
+                }
                 
                 .accordion {
                     display: flex;
                     align-items: center;
-                    box-sizing: border-box;
-                    background-color: $accordion-background-color;
                     padding: 18px;
                     cursor: pointer;
-                    width: 100%;
-                    margin: 10px 0 0;
+                    width: calc(100% - 36px);
+                    margin-top: 10px;
                     position: relative;
                     transition: all 0.3s;
+                    background-color: $accordion-background-color;
                     &:after {
                         content: "^";
                         position: absolute;
@@ -85,15 +101,17 @@
                         justify-content: center;
                         padding-right: 10px;
                         margin-right: 10px;
+                        text-align: center;
                         border-right: $accordion-separator-size solid $accordion-separator-color;
                         color: $accordion-seance-color;
-                        text-align: center;
-                        > * {
+                        
+                        > div, > p {
                             transition: color 0.3s;
                         }
                         .seance {
                             font-size: $accordion-seance-fontsize;
                         }
+                        
                         .seance_number {
                             color: $accordion-seance-number-color;
                             font-size: $accordion-seance-number-fontsize;
@@ -102,17 +120,15 @@
                     
                     .title {
                         transition: color 0.3s;
-                        font-size: $accordion-title-fontsize;
                         flex: 1;
+                        font-size: $accordion-title-fontsize;
                         color: $accordion-title-color;
                     }
                 }
 
                 .panel {
-                    box-sizing: border-box;
                     width: 100%;
-                    padding: 0 18px;
-                    overflow: hidden;
+                    padding: 20px;
                     display: none;
                 }
             }

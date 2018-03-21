@@ -1,13 +1,22 @@
-$color3: #0082C3;
-$color-background-default: #fff;
-$color-text-default: #000;
-$color-text-light: #888;
-$color-text-white: #fff;
+$color1: #4a4a4a;
+$color2: #fff;
+$color3: #0082c3;
+$color4: #888;
+
+
+$color-background-default: $color2;
+$color-text-default: $color1;
+$color-text-light: $color4;
+$color-text-white: $color2;
 
 //Title week
 $title-week-color: $color-text-default;
-$title-week-font-size: 18px;
-$title-week-fontweight: 300;
+$title-week-font-size: 30px;
+$title-week-fontweight: bold;
+
+$subtitle-week-color: $color-text-default;
+$subtitle-week-font-size: 14px;
+$subtitle-week-fontweight: 300;
 
 //Accordion
 $accordion-background-color: $color-background-default;
@@ -38,5 +47,35 @@ $accordion-separator-color: $color-text-light;
 $accordion-separator-color-hover: $color-text-light;
 $accordion-separator-color-active: $color-text-white;
 
+//Menu 
+$menu-font-size: 18px;
+$menu-font-color: $color-text-default;
+$menu-font-color-hover: $color-text-white;
+$menu-background-color: $color-background-default;
+$menu-background-color-hover: $color3;
+$menu-border: 1px solid $color1;
+$menu-item-size: 40px;
+$menu-border-radius: $menu-item-size*2;
+$menu-border-hover: 1px solid $color3;
+
 //Teaser
-$teaser-training-plan : 0;
+$teaser-training-plan-width: 215px;
+
+$teaser-training-plan-practice-fontsize : 14px;
+$teaser-training-plan-practice-color : $color-text-white;
+$teaser-training-plan-practice-color-hover : $color-text-white;
+
+$teaser-training-plan-title-fontsize : 16px;
+$teaser-training-plan-title-color : $color-text-light;
+$teaser-training-plan-title-color-hover : $color-text-default;
+
+$teaser-training-plan-description-fontsize : 12px;
+$teaser-training-plan-description-color : $teaser-training-plan-title-color;
+$teaser-training-plan-description-color-hover : $teaser-training-plan-title-color-hover;
+
+$teaser-training-plan-color-review: $teaser-training-plan-title-color;
+$teaser-training-plan-color-review-hover: $teaser-training-plan-title-color-hover;
+
+
+
+
