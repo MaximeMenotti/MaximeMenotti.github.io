@@ -1,0 +1,107 @@
+@import "variables.scss";
+
+.container {
+    .container_week {
+        .week {
+            .title_week {
+                font-size: $title-week-font-size;
+                font-weight: $title-week-fontweight;
+                color: $title-week-color;
+            }
+
+            .brick {
+                box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.10);
+                &:hover, 
+                &.active {
+                    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.20);
+                }
+                &:hover {
+                    .accordion {
+                        background-color: $accordion-background-color-hover;
+                        .title {
+                            color: $accordion-title-color-hover;
+                        }
+                        .seance_number,
+                        .seance {
+                            color: $accordion-seance-color-hover;
+                        }
+                        &:after {
+                            color: $accordion-icon-color-hover;
+                        }
+                    }
+                }
+                &.active {
+                    .accordion {
+                        background-color: $accordion-background-color-active;
+                        .title {
+                            color: $accordion-title-color-active;
+                        }
+                        .seance_number,
+                        .seance {
+                            color: $accordion-seance-color-active;
+                        }
+                        &:after {
+                            transform: rotate(-180deg) translate(0px, 5px);
+                            color: $accordion-icon-color-active;
+                        }
+                    }
+                }
+                
+                .accordion {
+                    display: flex;
+                    align-items: center;
+                    box-sizing: border-box;
+                    background-color: $accordion-background-color;
+                    padding: 18px;
+                    cursor: pointer;
+                    width: 100%;
+                    margin: 10px 0 0;
+                    position: relative;
+                    transition: all 0.3s;
+                    &:after {
+                        content: "^";
+                        position: absolute;
+                        right: 20px;
+                        top: auto;
+                        opacity: 0.5;
+                        transform: rotate(90deg);
+                        transition: transform 0.3s ease-in-out;
+                        color: $accordion-icon-color;
+                    }
+
+                    .seance_wrapper {
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        padding-right: 10px;
+                        margin-right: 10px;
+                        border-right: 1px solid #ccc;
+                        color: $accordion-seance-color;
+                        text-align: center;
+                        > * {
+                            transition: color 0.3s;
+                        }
+                        .seance_number {
+                            font-size: 2em;
+                        }
+                    }
+                    
+                    .title {
+                        transition: color 0.3s;
+                        flex: 1;
+                        color: $accordion-title-color;
+                    }
+                }
+
+                .panel {
+                    box-sizing: border-box;
+                    width: 100%;
+                    padding: 0 18px;
+                    overflow: hidden;
+                    display: none;
+                }
+            }
+        }
+    }
+}

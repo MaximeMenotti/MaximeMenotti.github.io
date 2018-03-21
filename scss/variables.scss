@@ -1,0 +1,24 @@
+$color3: #0082C3;
+$color-background-default: #fff;
+$color-text-default: #000;
+$color-text-light: #888;
+$color-text-white: #fff;
+
+//Title week
+$title-week-color: $color-text-default;
+$title-week-font-size: 18px;
+$title-week-fontweight: 300;
+
+//Accordion
+$accordion-background-color: $color-background-default;
+$accordion-background-color-hover: $accordion-background-color;
+$accordion-background-color-active: $color3;
+$accordion-title-color: $color-text-light;
+$accordion-title-color-hover: $color-text-default;
+$accordion-title-color-active: $color-text-white;
+$accordion-seance-color: $color-text-light;
+$accordion-seance-color-hover: $color-text-default;
+$accordion-seance-color-active: $color-text-white;
+$accordion-icon-color: $accordion-title-color;
+$accordion-icon-color-hover: $accordion-title-color-hover;
+$accordion-icon-color-active: $accordion-title-color-active;
