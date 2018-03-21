@@ -13,12 +13,30 @@ $title-week-fontweight: 300;
 $accordion-background-color: $color-background-default;
 $accordion-background-color-hover: $accordion-background-color;
 $accordion-background-color-active: $color3;
+
+$accordion-title-fontsize: 16px;
 $accordion-title-color: $color-text-light;
 $accordion-title-color-hover: $color-text-default;
 $accordion-title-color-active: $color-text-white;
+
+$accordion-seance-fontsize: 16px;
 $accordion-seance-color: $color-text-light;
 $accordion-seance-color-hover: $color-text-default;
 $accordion-seance-color-active: $color-text-white;
+
+$accordion-seance-number-fontsize: 2em;
+$accordion-seance-number-color: $accordion-seance-color;
+$accordion-seance-number-color-hover: $accordion-seance-color-hover;
+$accordion-seance-number-color-active: $accordion-seance-color-active;
+
 $accordion-icon-color: $accordion-title-color;
 $accordion-icon-color-hover: $accordion-title-color-hover;
 $accordion-icon-color-active: $accordion-title-color-active;
+
+$accordion-separator-size: 1px;
+$accordion-separator-color: $color-text-light;
+$accordion-separator-color-hover: $color-text-light;
+$accordion-separator-color-active: $color-text-white;
+
+//Teaser
+$teaser-training-plan : 0;
