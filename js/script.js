@@ -23,11 +23,24 @@ jQuery(function($) {
         }, 'slow');
     }
     
-    $('.week > p, .week .brick').viewportChecker({
-        classToAdd: 'visible',
-        classToRemove: 'hidden',
-        removeClassAfterAnimation: true, 
-        repeat: true
+    $.fn.isInViewport = function() {
+        var elementTop = $(this).offset().top;
+        var elementBottom = elementTop + $(this).outerHeight();
+        var viewportTop = $(window).scrollTop();
+        var viewportBottom = viewportTop + $(window).height();
+        return elementBottom > viewportTop && elementTop < viewportBottom;
+    };
+    
+    $(window).on('resize scroll', function() {
+        $('.week > p, .week .brick').each(function() {
+            if ($(this).isInViewport()) {
+                $(this).removeClass('hidden');
+                $(this).addClass('visible');
+            }
+        });
     });
-    $('.week > p, .week .brick').addClass('hidden');
+    
+    $('.week > p, .week .brick').each(function() {
+        if(!$(this).isInViewport()) $(this).addClass('hidden');
+    });
 });
