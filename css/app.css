@@ -62,10 +62,10 @@ main .teaserlist {
   flex-direction: row;
   justify-content: center; }
   main .teaserlist .teaser {
+    position: relative;
     width: 215px;
     margin: 10px;
     box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
-    position: relative;
     transition: all .3s; }
     main .teaserlist .teaser:hover {
       box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2); }
@@ -78,15 +78,15 @@ main .teaserlist {
       main .teaserlist .teaser:hover .teaser-inner.review {
         color: #4a4a4a; }
     main .teaserlist .teaser > p {
-      transition: color .3s;
       position: absolute;
       top: 10px;
       left: 10px;
+      z-index: 2;
       font-size: 14px;
       color: #fff;
       text-transform: uppercase;
       text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-      z-index: 2; }
+      transition: color .3s; }
     main .teaserlist .teaser > a {
       display: block;
       position: absolute;
@@ -128,16 +128,17 @@ main .teaserlist {
         main .teaserlist .teaser .teaser-inner.content .description p.length, main .teaserlist .teaser .teaser-inner.content .description p.frequency {
           background-image: url("/data/daily-calendar-pixel.png"); }
     main .teaserlist .teaser .teaser-inner.review {
-      transition: all .3s;
       margin: 20px 10px;
       text-align: right;
-      color: #888; }
+      color: #888;
+      transition: all .3s; }
 
 main .weeks .week {
-  margin: 30px 10px; }
+  margin: 30px 10px;
+  transition: all 1.5s; }
   main .weeks .week > p {
-    text-align: center;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    text-align: center; }
     main .weeks .week > p.title {
       font-size: 30px;
       font-weight: bold;
@@ -146,10 +147,16 @@ main .weeks .week {
       font-size: 14px;
       font-weight: 300;
       color: #4a4a4a; }
+  main .weeks .week.hidden {
+    opacity: 0;
+    transform: scale(0.95); }
+  main .weeks .week.visible {
+    opacity: 1;
+    transform: scale(1); }
   main .weeks .week > .brick {
     margin-top: 30px;
-    transition: all .3s;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); }
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all .3s; }
     main .weeks .week > .brick:hover, main .weeks .week > .brick.active {
       box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2); }
     main .weeks .week > .brick:hover .accordion {
@@ -180,13 +187,13 @@ main .weeks .week {
     main .weeks .week > .brick ~ .brick {
       margin-top: 0; }
     main .weeks .week > .brick .accordion {
+      position: relative;
       display: flex;
       align-items: center;
-      padding: 18px;
-      cursor: pointer;
       width: calc(100% - 36px);
+      padding: 18px;
       margin-top: 10px;
-      position: relative;
+      cursor: pointer;
       transition: all 0.3s;
       background-color: #fff; }
       main .weeks .week > .brick .accordion:after {
@@ -205,20 +212,19 @@ main .weeks .week {
         padding-right: 10px;
         margin-right: 10px;
         text-align: center;
+        font-size: 16px;
         border-right: 1px solid #888;
         color: #888; }
         main .weeks .week > .brick .accordion .seance_wrapper > div, main .weeks .week > .brick .accordion .seance_wrapper > p {
           transition: color 0.3s; }
-        main .weeks .week > .brick .accordion .seance_wrapper .seance {
-          font-size: 16px; }
         main .weeks .week > .brick .accordion .seance_wrapper .seance_number {
           color: #888;
           font-size: 2em; }
       main .weeks .week > .brick .accordion .title {
-        transition: color 0.3s;
         flex: 1;
         font-size: 16px;
-        color: #888; }
+        color: #888;
+        transition: color 0.3s; }
     main .weeks .week > .brick .panel {
       width: 100%;
       padding: 20px;
@@ -230,27 +236,27 @@ main .menu {
   justify-content: center;
   margin: 30px 0; }
   main .menu > li {
+    margin-right: 8px;
     list-style: none;
     text-align: center;
-    line-height: 40px;
-    margin-right: 8px; }
+    line-height: 40px; }
     main .menu > li > a {
-      font-size: 18px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #4a4a4a;
-      background-color: #fff;
       display: block;
-      border-radius: 80px;
       width: 40px;
       height: 40px;
-      border: 1px solid #4a4a4a; }
+      background-color: #fff;
+      border: 1px solid #4a4a4a;
+      border-radius: 80px;
+      font-size: 18px;
+      color: #4a4a4a;
+      text-decoration: none;
+      font-weight: bold; }
       main .menu > li > a:hover {
-        text-decoration: none;
-        transition: all 0.3s;
-        border: 1px solid #0082c3;
         background-color: #0082c3;
-        color: #fff; }
+        color: #fff;
+        border: 1px solid #0082c3;
+        text-decoration: none;
+        transition: all 0.3s; }
 
 body {
   font-family: 'Roboto Condensed'; }

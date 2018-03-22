@@ -1,5 +1,5 @@
 jQuery(function($) {
-    $('.accordion').click(function(evt) {
+    $('.accordion').click(function (evt) {
       var pannel = $(evt.currentTarget).next();
       if (pannel.is(':hidden')) {
         pannel.slideDown('slow');
@@ -11,7 +11,7 @@ jQuery(function($) {
     });
 
     $('.menu a').click(function(evt) {
-      scrollToPosition(evt);
+        scrollToPosition(evt);
     });
   
     function scrollToPosition(evt) {
@@ -22,4 +22,13 @@ jQuery(function($) {
             scrollTop: $(target).offset().top
         }, 'slow');
     }
+    
+    $('.week').viewportChecker({
+        classToAdd: 'visible',
+        classToAddForFullView: 'full-visible', 
+        classToRemove: 'hidden',
+        removeClassAfterAnimation: true, 
+        repeat: true
+    });
+    $('.week').addClass('hidden');
 });

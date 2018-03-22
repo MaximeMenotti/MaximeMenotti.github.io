@@ -4,31 +4,30 @@ main {
         flex-direction: row;
         justify-content: center;
         margin: 30px 0;
-        
         > li {
+            margin-right: 8px;
             list-style: none;
             text-align: center;
             line-height: $menu-item-size;
-            margin-right: 8px;
 
             > a {
-                font-size: $menu-font-size;
-                text-decoration: none;
-                font-weight: bold;
-                color: $menu-font-color;
-                background-color: $menu-background-color;
                 display: block;
-                border-radius: $menu-border-radius;
                 width: $menu-item-size;
                 height: $menu-item-size;
+                background-color: $menu-background-color;
                 border: $menu-border;
+                border-radius: $menu-border-radius;
+                font-size: $menu-font-size;
+                color: $menu-font-color;
+                text-decoration: none;
+                font-weight: bold;
 
                 &:hover {
-                    text-decoration: none;
-                    transition: all 0.3s;
-                    border: $menu-border-hover;
                     background-color: $menu-background-color-hover;
                     color: $menu-font-color-hover;
+                    border: $menu-border-hover;
+                    text-decoration: none;
+                    transition: all 0.3s;
                 }
             }
         }
