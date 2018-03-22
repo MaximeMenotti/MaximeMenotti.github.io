@@ -9,9 +9,14 @@ main {
             list-style: none;
             text-align: center;
             line-height: $menu-item-size;
+            &:last-child {
+                margin-right: 0;
+            }
 
             > a {
                 display: block;
+                text-decoration: none;
+                font-weight: bold;
                 width: $menu-item-size;
                 height: $menu-item-size;
                 background-color: $menu-background-color;
@@ -19,15 +24,12 @@ main {
                 border-radius: $menu-border-radius;
                 font-size: $menu-font-size;
                 color: $menu-font-color;
-                text-decoration: none;
-                font-weight: bold;
-
                 &:hover {
+                    text-decoration: none;
+                    transition: all 0.3s;
                     background-color: $menu-background-color-hover;
                     color: $menu-font-color-hover;
                     border: $menu-border-hover;
-                    text-decoration: none;
-                    transition: all 0.3s;
                 }
             }
         }

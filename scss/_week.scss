@@ -1,4 +1,4 @@
-@import "variables.scss";
+@import "variables";
 
 main {
     .weeks {
@@ -33,6 +33,7 @@ main {
             }
 
             > .brick {
+                width: 100%;
                 margin-top: 30px;
                 box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.10);
                 transition: all $animation-time;
@@ -77,7 +78,7 @@ main {
                             }
                         }
                         &:after {
-                            transform: rotate(-180deg) translate(0px, 5px);
+                            transform: rotate(-180deg) translate(-5px, 5px);
                             color: $accordion-icon-color-active;
                         }
                     }
@@ -100,7 +101,6 @@ main {
                         content: "^";
                         position: absolute;
                         right: 20px;
-                        top: auto;
                         transform: rotate(90deg);
                         transition: transform 0.3s ease-in-out;
                         color: $accordion-icon-color;
@@ -137,7 +137,7 @@ main {
                 }
 
                 .panel {
-                    width: 100%;
+                    width: calc(100% - 40px);
                     padding: 20px;
                     display: none;
                 }

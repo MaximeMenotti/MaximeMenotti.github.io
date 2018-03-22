@@ -1,0 +1,25 @@
+main {
+  .plan-description {
+    text-align: center;
+
+    img {
+      height: 120px;
+      width: 120px;
+      border-radius: 100%;
+    }
+
+    h1 {
+      font-size: $plan-description-title-fontsize;
+      font-weight: $plan-description-title-fontweight;
+    }
+
+    .author {
+      font-size: $plan-description-author-fontsize;
+      font-weight: $plan-description-author-fontweight;
+    }
+
+    .review {
+      margin: 20px 0;
+    }
+  }
+}

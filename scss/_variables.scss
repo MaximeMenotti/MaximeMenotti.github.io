@@ -1,3 +1,11 @@
+$wrapper-size: 940px;
+
+$lt480 : "only screen and (max-width: 480px)";
+$lt600 : "only screen and (max-width: 600px)";
+$lt768 : "only screen and (max-width: 768px)";
+$lt960 : "only screen and (max-width: 960px)";
+$lt960up : "only screen and (min-width: 961px)";
+
 $color1: #4a4a4a;
 $color2: #fff;
 $color3: #0082c3;
@@ -58,26 +66,36 @@ $menu-background-color: $color-background-default;
 $menu-background-color-hover: $color3;
 $menu-border: 1px solid $color1;
 $menu-item-size: 40px;
-$menu-border-radius: $menu-item-size*2;
+$menu-border-radius: 100%;
 $menu-border-hover: 1px solid $color3;
 
 //Teaser
-$teaser-training-plan-width: 215px;
+$teaser-training-plan-margin: 10px;
+//$teaser-training-plan-width: ($wrapper-size/4)-($teaser-training-plan-margin*2);
+$teaser-training-plan-width: calc((100%/4) - 20px);
+
+@mixin teaser-width($number-items) {
+  width: calc((100%/#{$number-items}) - 20px);
+}
 
 $teaser-training-plan-practice-fontsize : 14px;
 $teaser-training-plan-practice-color : $color-text-white;
-$teaser-training-plan-practice-color-hover : $color-text-white;
 
 $teaser-training-plan-title-fontsize : 16px;
 $teaser-training-plan-title-color : $color-text-light;
-$teaser-training-plan-title-color-hover : $color-text-default;
 
 $teaser-training-plan-description-fontsize : 12px;
 $teaser-training-plan-description-color : $teaser-training-plan-title-color;
-$teaser-training-plan-description-color-hover : $teaser-training-plan-title-color-hover;
 
 $teaser-training-plan-color-review: $teaser-training-plan-title-color;
-$teaser-training-plan-color-review-hover: $teaser-training-plan-title-color-hover;
+
+//Plan description
+$plan-description-title-fontsize: 48px;
+$plan-description-title-fontweight: 300;
+
+$plan-description-author-fontsize: 20px;
+$plan-description-author-fontweight: 400;
+
 
 
 
