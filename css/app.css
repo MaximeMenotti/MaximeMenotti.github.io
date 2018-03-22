@@ -134,11 +134,11 @@ main .teaserlist {
       transition: all .3s; }
 
 main .weeks .week {
-  margin: 30px 10px;
-  transition: all 1.5s; }
+  margin: 30px 10px; }
   main .weeks .week > p {
     margin-bottom: 10px;
-    text-align: center; }
+    text-align: center;
+    transition: all 0.8s; }
     main .weeks .week > p.title {
       font-size: 30px;
       font-weight: bold;
@@ -147,16 +147,16 @@ main .weeks .week {
       font-size: 14px;
       font-weight: 300;
       color: #4a4a4a; }
-  main .weeks .week.hidden {
-    opacity: 0;
-    transform: scale(0.95); }
-  main .weeks .week.visible {
-    opacity: 1;
-    transform: scale(1); }
+    main .weeks .week > p.hidden {
+      opacity: 0;
+      transform: scale(0.95); }
+    main .weeks .week > p.visible {
+      opacity: 1;
+      transform: scale(1); }
   main .weeks .week > .brick {
     margin-top: 30px;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-    transition: all .3s; }
+    transition: all 0.8s; }
     main .weeks .week > .brick:hover, main .weeks .week > .brick.active {
       box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2); }
     main .weeks .week > .brick:hover .accordion {
@@ -186,6 +186,12 @@ main .weeks .week {
         color: #fff; }
     main .weeks .week > .brick ~ .brick {
       margin-top: 0; }
+    main .weeks .week > .brick.hidden {
+      opacity: 0;
+      transform: scale(0.95); }
+    main .weeks .week > .brick.visible {
+      opacity: 1;
+      transform: scale(1); }
     main .weeks .week > .brick .accordion {
       position: relative;
       display: flex;
@@ -194,7 +200,7 @@ main .weeks .week {
       padding: 18px;
       margin-top: 10px;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all .3s;
       background-color: #fff; }
       main .weeks .week > .brick .accordion:after {
         content: "^";

@@ -23,12 +23,11 @@ jQuery(function($) {
         }, 'slow');
     }
     
-    $('.week').viewportChecker({
+    $('.week > p, .week .brick').viewportChecker({
         classToAdd: 'visible',
-        classToAddForFullView: 'full-visible', 
         classToRemove: 'hidden',
         removeClassAfterAnimation: true, 
         repeat: true
     });
-    $('.week').addClass('hidden');
+    $('.week > p, .week .brick').addClass('hidden');
 });
