@@ -2,12 +2,13 @@ main {
     .teaserlist {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-start;
+        align-items: flex-start;
         flex-wrap: wrap;
 
         .teaser {
             position: relative;
-
+            @include teaser-width($number-items: 4);
 
             @media #{$lt960} {
                 @include teaser-width($number-items: 3);
@@ -17,9 +18,6 @@ main {
             }
             @media #{$lt480} {
                 @include teaser-width($number-items: 1);
-            }
-            @media #{$lt960up} {
-                @include teaser-width($number-items: 4);
             }
             margin: $teaser-training-plan-margin;
             box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.10);
@@ -53,7 +51,7 @@ main {
             
             .teaser-inner {
                 &:not(.media) {
-                    padding: 10px;
+                    padding: 15px;
                 }
                 &.media {
                     width: 100%;
@@ -82,25 +80,27 @@ main {
                         margin-top: 40px;
 
                         p {
-                            padding-left: 40px;
+                            padding-left: 30px;
                             margin-top: 15px;
+                            line-height: 18px;
                             background-repeat: no-repeat;
                             background-position: left top;
+                            background-size: 16px;
                             color: $teaser-training-plan-description-color;
                             font-size: $teaser-training-plan-description-fontsize;
                             &.difficulty {
-                                background-image: url("../data/volume.png");
+                                background-image: url("../img/volume-clear.png");
                             }
                             &.length,
                             &.frequency {
-                                background-image: url("../data/daily-calendar-pixel.png");
+                                background-image: url("../img/calendar-clear.png");
                             }
                         }
                     }
                 }
                 
                 &.review {
-                    margin: 20px 10px;
+                    font-size: $teaser-training-plan-description-fontsize;
                     text-align: right;
                     color: $teaser-training-plan-color-review;
                     transition: all .3s;

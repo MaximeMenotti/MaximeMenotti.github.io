@@ -1,0 +1,30 @@
+main {
+  .container-template {
+    .link-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+
+      li {
+        a {
+          display: block;
+          padding: 14px 16px;
+          text-align: center;
+          text-decoration: none;
+          color: $color1;
+          text-transform: uppercase;
+
+          &:hover {
+            background-color: $color3;
+            color: $color2;
+          }
+        }
+      }
+    }
+  }
+}

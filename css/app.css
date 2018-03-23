@@ -48,7 +48,7 @@ table {
 body {
   font-family: 'Roboto Condensed'; }
 
-main {
+.container-template {
   max-width: 940px;
   margin: 0 auto; }
 
@@ -65,10 +65,12 @@ main {
 main .teaserlist {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-wrap: wrap; }
   main .teaserlist .teaser {
     position: relative;
+    width: calc((100%/4) - 20px);
     margin: 10px;
     box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
     transition: all .3s; }
@@ -81,9 +83,6 @@ main .teaserlist {
     @media only screen and (max-width: 480px) {
       main .teaserlist .teaser {
         width: calc((100%/1) - 20px); } }
-    @media only screen and (min-width: 961px) {
-      main .teaserlist .teaser {
-        width: calc((100%/4) - 20px); } }
     main .teaserlist .teaser:hover {
       box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2); }
     main .teaserlist .teaser > p {
@@ -91,7 +90,7 @@ main .teaserlist {
       top: 10px;
       left: 10px;
       z-index: 2;
-      font-size: 14px;
+      font-size: 16px;
       color: #fff;
       text-transform: uppercase;
       text-shadow: 0px 0px 35px rgba(0, 0, 0, 0.6);
@@ -105,7 +104,7 @@ main .teaserlist {
       height: 100%;
       width: 100%; }
     main .teaserlist .teaser .teaser-inner:not(.media) {
-      padding: 10px; }
+      padding: 15px; }
     main .teaserlist .teaser .teaser-inner.media {
       width: 100%;
       height: 125px;
@@ -124,18 +123,20 @@ main .teaserlist {
     main .teaserlist .teaser .teaser-inner.content .description {
       margin-top: 40px; }
       main .teaserlist .teaser .teaser-inner.content .description p {
-        padding-left: 40px;
+        padding-left: 30px;
         margin-top: 15px;
+        line-height: 18px;
         background-repeat: no-repeat;
         background-position: left top;
+        background-size: 16px;
         color: #888;
-        font-size: 12px; }
+        font-size: 14px; }
         main .teaserlist .teaser .teaser-inner.content .description p.difficulty {
-          background-image: url("../data/volume.png"); }
+          background-image: url("../img/volume-clear.png"); }
         main .teaserlist .teaser .teaser-inner.content .description p.length, main .teaserlist .teaser .teaser-inner.content .description p.frequency {
-          background-image: url("../data/daily-calendar-pixel.png"); }
+          background-image: url("../img/calendar-clear.png"); }
     main .teaserlist .teaser .teaser-inner.review {
-      margin: 20px 10px;
+      font-size: 14px;
       text-align: right;
       color: #888;
       transition: all .3s; }
@@ -287,8 +288,10 @@ nav.header li {
     background-color: #0082c3; }
 
 main .plan-description {
-  text-align: center; }
+  text-align: center;
+  margin: 40px 0; }
   main .plan-description img {
+    margin: 20px;
     height: 120px;
     width: 120px;
     border-radius: 100%; }
@@ -300,5 +303,59 @@ main .plan-description {
     font-weight: 400; }
   main .plan-description .review {
     margin: 20px 0; }
+  main .plan-description .description {
+    margin-bottom: 30px; }
+    main .plan-description .description > p {
+      margin: 10px;
+      font-size: 16px;
+      font-weight: 300; }
+  main .plan-description .container-description-summary {
+    background-color: #4a4a4a; }
+    main .plan-description .container-description-summary .container-template {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      color: #fff; }
+    main .plan-description .container-description-summary .description-summary {
+      margin: 20px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center; }
+      main .plan-description .container-description-summary .description-summary .label {
+        font-size: 10px;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: 50px;
+        min-width: 60px;
+        padding-bottom: 55px; }
+      main .plan-description .container-description-summary .description-summary .title {
+        margin: 15px 5px 5px;
+        font-size: 20px; }
+      main .plan-description .container-description-summary .description-summary.level .label {
+        background-image: url("../img/volume.png"); }
+      main .plan-description .container-description-summary .description-summary.lenght .label, main .plan-description .container-description-summary .description-summary.frequency .label {
+        background-image: url("../img/calendar.png"); }
+
+main .container-template .link-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: wrap; }
+  main .container-template .link-list li a {
+    display: block;
+    padding: 14px 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #4a4a4a;
+    text-transform: uppercase; }
+    main .container-template .link-list li a:hover {
+      background-color: #0082c3;
+      color: #fff; }
 
 /*# sourceMappingURL=app.css.map */

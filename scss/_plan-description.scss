@@ -1,8 +1,10 @@
 main {
-  .plan-description {
+    .plan-description {
     text-align: center;
+    margin: 40px 0;
 
     img {
+      margin: 20px;
       height: 120px;
       width: 120px;
       border-radius: 100%;
@@ -20,6 +22,58 @@ main {
 
     .review {
       margin: 20px 0;
+    }
+
+    .description {
+      margin-bottom: 30px;
+      > p {
+        margin: 10px;
+        font-size: $plan-description-description-fontsize;
+        font-weight: $plan-description-description-fontweight;
+      }
+    }
+
+    .container-description-summary {
+      background-color: $color1;
+      .container-template {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        color: $color2;
+      }
+      .description-summary {
+        margin: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        .label {
+          font-size: 10px;
+          background-repeat: no-repeat;
+          background-position: center bottom;
+          background-size: 50px;
+          min-width: 60px;
+          padding-bottom: 55px;
+        }
+        .title{
+          margin: 15px 5px 5px;
+          font-size: 20px;
+        }
+
+        &.level {
+          .label {
+            background-image: url("../img/volume.png");
+          }
+        }
+
+        &.lenght,
+        &.frequency {
+          .label {
+            background-image: url("../img/calendar.png");
+          }
+        }
+      }
     }
   }
 }
