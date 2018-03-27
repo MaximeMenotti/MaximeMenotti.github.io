@@ -5,6 +5,9 @@ $lt600 : "only screen and (max-width: 600px)";
 $lt768 : "only screen and (max-width: 768px)";
 $lt960 : "only screen and (max-width: 960px)";
 
+$gt480 : "only screen and (min-width: 481px)";
+
+
 $color1: #4a4a4a;
 $color2: #fff;
 $color3: #0082c3;
@@ -55,7 +58,7 @@ $accordion-separator-color-hover: $color-text-light;
 $accordion-separator-color-active: $color-text-white;
 
 $animated: true;
-$animation-time: .6s;
+$animation-time: .5s;
 
 //Menu 
 $menu-font-size: 18px;
@@ -71,10 +74,6 @@ $menu-border-hover: 1px solid $color3;
 //Teaser
 $teaser-training-plan-margin: 10px;
 //$teaser-training-plan-width: ($wrapper-size/4)-($teaser-training-plan-margin*2);
-
-@mixin teaser-width($number-items) {
-  width: calc((100%/#{$number-items}) - 20px);
-}
 
 $teaser-training-plan-practice-fontsize : 16px;
 $teaser-training-plan-practice-color : $color-text-white;

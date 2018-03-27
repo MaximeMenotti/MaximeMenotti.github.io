@@ -12,17 +12,7 @@ main {
 
       li {
         a {
-          display: block;
-          padding: 14px 16px;
-          text-align: center;
-          text-decoration: none;
-          color: $color1;
-          text-transform: uppercase;
-
-          &:hover {
-            background-color: $color3;
-            color: $color2;
-          }
+          @include training-plan-button();
         }
       }
     }

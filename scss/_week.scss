@@ -4,18 +4,6 @@ main {
     .weeks {
         .week {
             margin: 30px 10px;
-            
-            @if($animated) {
-                .hidden {
-                    opacity: 0;
-                    transform: scale(0.95);
-                }
-                .visible {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-            }
-            
             > p {
                 margin-bottom: 10px;
                 text-align: center;

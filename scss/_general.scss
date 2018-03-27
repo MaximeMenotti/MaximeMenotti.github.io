@@ -55,3 +55,25 @@ body {
   max-width: $wrapper-size;
   margin: 0 auto;
 }
+
+.visible {
+  opacity: 1;
+  @if($animated) {
+    transform: scale(1);
+    transition: all $animation-time;
+  }
+}
+
+.display {
+  display: block;
+  @if($animated) {
+    animation: fadeInFromNone $animation-time ease-out;
+  }
+}
+
+.displaynone{
+  display: none;
+  @if($animated) {
+    animation: fadeOut $animation-time ease-out;
+  }
+}
