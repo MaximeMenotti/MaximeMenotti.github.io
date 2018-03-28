@@ -30,18 +30,22 @@ main .container-advice {
     color: #4a4a4a; }
   main .container-advice .description {
     margin: 0 0 20px;
+    padding: 0 10px;
     font-size: 16px;
     font-weight: 200;
     color: #4a4a4a; }
   main .container-advice .advice-page-description {
     text-align: center; }
   main .container-advice .author-advice {
-    margin: 80px 0;
+    margin: 40px 0;
     text-align: center; }
     main .container-advice .author-advice .container-template {
       display: flex;
       flex-direction: row;
       align-items: center; }
+      @media only screen and (max-width: 600px) {
+        main .container-advice .author-advice .container-template {
+          flex-direction: column; } }
       main .container-advice .author-advice .container-template .container-description {
         flex: 1;
         margin: 10px; }
@@ -57,14 +61,14 @@ main .container-advice {
           color: #4a4a4a;
           text-transform: uppercase;
           transition: all 0.3s;
-          box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
           display: table;
           margin: auto; }
           main .container-advice .author-advice .container-template .container-description a.active {
             background: #0082c3;
             color: #fff; }
           main .container-advice .author-advice .container-template .container-description a:hover {
-            box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2); }
+            box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2); }
       main .container-advice .author-advice .container-template .container-media {
         flex: 1;
         margin: 20px; }
@@ -498,6 +502,64 @@ main .weeks .week {
       width: calc(100% - 40px);
       padding: 20px;
       display: none; }
+      main .weeks .week > .brick .panel .container-seance {
+        display: flex;
+        flex-direction: row;
+        font-size: 14px; }
+        main .weeks .week > .brick .panel .container-seance .seance-description {
+          flex: 3;
+          margin-right: 40px; }
+          main .weeks .week > .brick .panel .container-seance .seance-description > p {
+            margin-bottom: 20px;
+            font-weight: 200; }
+            main .weeks .week > .brick .panel .container-seance .seance-description > p:last-child {
+              margin-bottom: 0; }
+            main .weeks .week > .brick .panel .container-seance .seance-description > p.title {
+              font-weight: 400;
+              text-transform: uppercase; }
+        main .weeks .week > .brick .panel .container-seance .seance-summary {
+          flex: 2;
+          text-transform: uppercase; }
+          main .weeks .week > .brick .panel .container-seance .seance-summary > p {
+            text-align: center;
+            font-weight: 400;
+            margin-bottom: 20px; }
+          main .weeks .week > .brick .panel .container-seance .seance-summary > ul ol {
+            counter-reset: summary; }
+          main .weeks .week > .brick .panel .container-seance .seance-summary > ul li {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            list-style-type: none;
+            counter-increment: summary;
+            margin-bottom: 10px;
+            font-weight: 200;
+            min-height: 40px;
+            padding-left: 55px; }
+            main .weeks .week > .brick .panel .container-seance .seance-summary > ul li:last-child {
+              margin-bottom: 0; }
+            main .weeks .week > .brick .panel .container-seance .seance-summary > ul li:before {
+              content: counter(summary);
+              display: block;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              text-align: center;
+              line-height: 40px;
+              width: 40px;
+              height: 40px;
+              background: #EEE;
+              border-radius: 100%;
+              color: #888; }
+        @media only screen and (max-width: 600px) {
+          main .weeks .week > .brick .panel .container-seance {
+            flex-direction: column; }
+            main .weeks .week > .brick .panel .container-seance .seance-description {
+              margin: 0; }
+            main .weeks .week > .brick .panel .container-seance .seance-summary {
+              margin-top: 30px; } }
 
 main .menu {
   display: flex;
@@ -550,7 +612,7 @@ nav.header li {
 
 main .plan-description {
   text-align: center;
-  margin: 40px 0; }
+  margin: 30px 0; }
   main .plan-description img {
     margin: 20px;
     height: 120px;
@@ -601,15 +663,13 @@ main .plan-description {
 
 main .container-template .link-list {
   list-style-type: none;
-  margin-bottom: 60px;
-  padding: 0;
+  padding: 5px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   flex-wrap: wrap; }
   main .container-template .link-list li a {
-    margin: 0 5px;
     display: block;
     margin: 10px;
     position: relative;
@@ -619,12 +679,12 @@ main .container-template .link-list {
     color: #4a4a4a;
     text-transform: uppercase;
     transition: all 0.3s;
-    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1); }
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); }
     main .container-template .link-list li a.active {
       background: #0082c3;
       color: #fff; }
     main .container-template .link-list li a:hover {
-      box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2); }
+      box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2); }
     main .container-template .link-list li a.download {
       background: url("../img/download.svg") no-repeat center left 16px;
       background-size: 15px;

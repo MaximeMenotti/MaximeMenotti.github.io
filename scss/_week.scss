@@ -128,6 +128,90 @@ main {
                     width: calc(100% - 40px);
                     padding: 20px;
                     display: none;
+
+                    .container-seance {
+                        display: flex;
+                        flex-direction: row;
+                        font-size: 14px;
+
+                        .seance-description {
+                            flex: 3;
+                            margin-right: 40px;
+
+                            > p {
+                                margin-bottom: 20px;
+                                font-weight: 200;
+
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+
+                                &.title {
+                                    font-weight: 400;
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+
+                        .seance-summary {
+                            flex: 2;
+                            text-transform: uppercase;
+                            > p {
+                                text-align: center;
+                                font-weight: 400;
+                                margin-bottom: 20px;
+                            }
+
+
+                            > ul {
+                                ol {
+                                    counter-reset: summary;
+                                }
+
+                                li{
+                                    display: flex;
+                                    flex-direction:column;
+                                    justify-content:center;
+                                    position: relative;
+                                    list-style-type: none;
+                                    counter-increment: summary;
+                                    margin-bottom: 10px;
+                                    font-weight: 200;
+                                    min-height: 40px;
+                                    padding-left: 55px;
+                                    &:last-child {
+                                        margin-bottom: 0;
+                                    }
+                                    &:before {
+                                        content: counter(summary);
+                                        display: block;
+                                        position: absolute;
+                                        top: 0;
+                                        bottom: 0;
+                                        left: 0;
+                                        text-align: center;
+                                        line-height: 40px;
+                                        width: 40px;
+                                        height: 40px;
+                                        background: $color5;
+                                        border-radius: 100%;
+                                        color: $color4;
+                                    }
+                                }
+                            }
+                        }
+
+                        @media #{$lt600} {
+                            flex-direction: column;
+
+                            .seance-description {
+                                margin: 0;
+                            }
+                            .seance-summary {
+                                margin-top: 30px;
+                            }
+                        }
+                    }
                 }
             }
         }

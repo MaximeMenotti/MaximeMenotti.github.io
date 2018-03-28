@@ -10,6 +10,7 @@ main {
 
     .description {
       margin: 0 0 20px;
+      padding: 0 10px;
       font-size: $advice-description-fontsize;
       font-weight: $advice-description-fontweight;
       color: $advice-description-color;
@@ -20,13 +21,17 @@ main {
     }
 
     .author-advice {
-      margin: 80px 0;
+      margin: 40px 0;
       text-align: center;
 
       .container-template {
         display: flex;
         flex-direction: row;
         align-items: center;
+
+        @media #{$lt600} {
+          flex-direction: column;
+        }
 
         .container-description {
           flex: 1;
