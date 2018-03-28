@@ -619,14 +619,18 @@ main .plan-description {
     width: 120px;
     border-radius: 100%; }
   main .plan-description h1 {
+    padding: 10px;
     font-size: 48px;
     font-weight: 300; }
   main .plan-description .author {
+    padding: 10px;
     font-size: 20px;
     font-weight: 400; }
   main .plan-description .review {
+    padding: 10px;
     margin: 20px 0; }
   main .plan-description .description {
+    padding: 10px;
     margin-bottom: 30px; }
     main .plan-description .description > p {
       margin: 10px;
@@ -638,12 +642,12 @@ main .plan-description {
       display: flex;
       flex-direction: row;
       justify-content: center;
+      flex-wrap: wrap;
       color: #fff; }
     main .plan-description .container-description-summary .description-summary {
       margin: 20px;
       display: flex;
       flex-direction: row;
-      flex-wrap: wrap;
       justify-content: center;
       align-items: center; }
       main .plan-description .container-description-summary .description-summary .label {
@@ -669,6 +673,9 @@ main .container-template .link-list {
   flex-direction: row;
   justify-content: flex-end;
   flex-wrap: wrap; }
+  @media only screen and (max-width: 768px) {
+    main .container-template .link-list {
+      justify-content: center; } }
   main .container-template .link-list li a {
     display: block;
     margin: 10px;

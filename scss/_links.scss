@@ -8,6 +8,10 @@ main {
       flex-direction: row;
       justify-content: flex-end;
       flex-wrap: wrap;
+      
+      @media #{$lt768} {
+        justify-content: center;
+      }
 
       li {
         a {
