@@ -60,20 +60,28 @@ body {
   opacity: 1;
   @if($animated) {
     transform: scale(1);
-    transition: all $animation-time;
+    transition: all $hidden-animation-time;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  @if($animated) {
+    transform: scale(0.95);
+    transition: all $hidden-animation-time;
   }
 }
 
 .display {
   display: block;
   @if($animated) {
-    animation: fadeInFromNone $animation-time ease-out;
+    animation: fadeInFromNone $switch-page-animation-time ease-out;
   }
 }
 
-.displaynone{
+.display-none{
   display: none;
   @if($animated) {
-    animation: fadeOut $animation-time ease-out;
+    animation: fadeOut $switch-page-animation-time ease-out;
   }
 }

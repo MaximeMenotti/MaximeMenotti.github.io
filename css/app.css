@@ -24,12 +24,20 @@
     transform: scale(0.99); } }
 main .container-advice {
   margin: 20px 0; }
-  main .container-advice .advice-description {
-    margin: 20px 0;
+  main .container-advice .title {
+    font-size: 30px;
+    font-weight: 400;
+    color: #4a4a4a; }
+  main .container-advice .description {
+    margin: 0 0 20px;
+    font-size: 16px;
+    font-weight: 200;
+    color: #4a4a4a; }
+  main .container-advice .advice-page-description {
     text-align: center; }
   main .container-advice .author-advice {
-    text-align: center;
-    margin: 80px 0; }
+    margin: 80px 0;
+    text-align: center; }
     main .container-advice .author-advice .container-template {
       display: flex;
       flex-direction: row;
@@ -37,40 +45,33 @@ main .container-advice {
       main .container-advice .author-advice .container-template .container-description {
         flex: 1;
         margin: 10px; }
-        main .container-advice .author-advice .container-template .container-description .title {
-          font-size: 30px;
-          font-weight: bold;
-          color: #4a4a4a; }
-        main .container-advice .author-advice .container-template .container-description .description {
-          font-size: 16px;
-          color: #4a4a4a; }
+        main .container-advice .author-advice .container-template .container-description .advice-description {
+          margin: 20px 0; }
         main .container-advice .author-advice .container-template .container-description a {
           display: block;
+          margin: 10px;
           position: relative;
           padding: 14px 16px;
           text-align: center;
           text-decoration: none;
           color: #4a4a4a;
           text-transform: uppercase;
-          transition: all 0.5s;
+          transition: all 0.3s;
+          box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
           display: table;
           margin: auto; }
           main .container-advice .author-advice .container-template .container-description a.active {
-            background: #888; }
-          main .container-advice .author-advice .container-template .container-description a:hover {
-            background-color: #0082c3;
+            background: #0082c3;
             color: #fff; }
+          main .container-advice .author-advice .container-template .container-description a:hover {
+            box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2); }
       main .container-advice .author-advice .container-template .container-media {
         flex: 1;
         margin: 20px; }
         main .container-advice .author-advice .container-template .container-media img {
           max-width: 100%; }
-  main .container-advice .linked-advices .container-template .title {
-    margin: 10px 0;
-    font-size: 30px;
-    font-weight: bold; }
-  main .container-advice .linked-advices .container-template .description {
-    margin-bottom: 10px; }
+  main .container-advice .linked-advices .container-template .linked-advices-title {
+    margin: 20px 0; }
   main .container-advice .linked-advices .container-template .teaser-list {
     display: flex;
     flex-direction: row;
@@ -135,13 +136,18 @@ body {
 .visible {
   opacity: 1;
   transform: scale(1);
-  transition: all 0.5s; }
+  transition: all 0.7s; }
+
+.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.7s; }
 
 .display {
   display: block;
   animation: fadeInFromNone 0.5s ease-out; }
 
-.displaynone {
+.display-none {
   display: none;
   animation: fadeOut 0.5s ease-out; }
 
@@ -407,7 +413,7 @@ main .weeks .week {
   main .weeks .week > p {
     margin-bottom: 10px;
     text-align: center;
-    transition: all 0.5s; }
+    transition: all 0.7s; }
     main .weeks .week > p.title {
       font-size: 30px;
       font-weight: bold;
@@ -420,7 +426,7 @@ main .weeks .week {
     width: 100%;
     margin-top: 30px;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s; }
+    transition: all 0.7s; }
     main .weeks .week > .brick:hover, main .weeks .week > .brick.active {
       box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2); }
     main .weeks .week > .brick:hover .accordion {
@@ -595,7 +601,7 @@ main .plan-description {
 
 main .container-template .link-list {
   list-style-type: none;
-  margin: 0;
+  margin-bottom: 60px;
   padding: 0;
   overflow: hidden;
   display: flex;
@@ -603,18 +609,25 @@ main .container-template .link-list {
   justify-content: flex-end;
   flex-wrap: wrap; }
   main .container-template .link-list li a {
+    margin: 0 5px;
     display: block;
+    margin: 10px;
     position: relative;
     padding: 14px 16px;
     text-align: center;
     text-decoration: none;
     color: #4a4a4a;
     text-transform: uppercase;
-    transition: all 0.5s; }
+    transition: all 0.3s;
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1); }
     main .container-template .link-list li a.active {
-      background: #888; }
-    main .container-template .link-list li a:hover {
-      background-color: #0082c3;
+      background: #0082c3;
       color: #fff; }
+    main .container-template .link-list li a:hover {
+      box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2); }
+    main .container-template .link-list li a.download {
+      background: url("../img/download.svg") no-repeat center left 16px;
+      background-size: 15px;
+      padding-left: 41px; }
 
 /*# sourceMappingURL=app.css.map */

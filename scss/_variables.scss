@@ -12,36 +12,31 @@ $color1: #4a4a4a;
 $color2: #fff;
 $color3: #0082c3;
 $color4: #888;
-
-
-$color-background-default: $color2;
-$color-text-default: $color1;
-$color-text-light: $color4;
-$color-text-white: $color2;
+$color5: #EEE;
 
 //Title week
-$title-week-color: $color-text-default;
+$title-week-color: $color1;
 $title-week-font-size: 30px;
 $title-week-fontweight: bold;
 
-$subtitle-week-color: $color-text-default;
+$subtitle-week-color: $color1;
 $subtitle-week-font-size: 14px;
 $subtitle-week-fontweight: 300;
 
 //Accordion
-$accordion-background-color: $color-background-default;
+$accordion-background-color: $color2;
 $accordion-background-color-hover: $accordion-background-color;
 $accordion-background-color-active: $color3;
 
 $accordion-title-fontsize: 16px;
-$accordion-title-color: $color-text-light;
-$accordion-title-color-hover: $color-text-default;
-$accordion-title-color-active: $color-text-white;
+$accordion-title-color: $color4;
+$accordion-title-color-hover: $color1;
+$accordion-title-color-active: $color2;
 
 $accordion-seance-fontsize: 16px;
-$accordion-seance-color: $color-text-light;
-$accordion-seance-color-hover: $color-text-default;
-$accordion-seance-color-active: $color-text-white;
+$accordion-seance-color: $color4;
+$accordion-seance-color-hover: $color1;
+$accordion-seance-color-active: $color2;
 
 $accordion-seance-number-fontsize: 2em;
 $accordion-seance-number-color: $accordion-seance-color;
@@ -53,18 +48,22 @@ $accordion-icon-color-hover: $accordion-title-color-hover;
 $accordion-icon-color-active: $accordion-title-color-active;
 
 $accordion-separator-size: 1px;
-$accordion-separator-color: $color-text-light;
-$accordion-separator-color-hover: $color-text-light;
-$accordion-separator-color-active: $color-text-white;
+$accordion-separator-color: $color4;
+$accordion-separator-color-hover: $color4;
+$accordion-separator-color-active: $color2;
 
 $animated: true;
-$animation-time: .5s;
+$week-animation-time: .7s;
+$teaser-animation-time: .8s;
+$hidden-animation-time: .7s;
+$switch-page-animation-time: .5s;
+$button-hover-animation-time: .3s;
 
 //Menu 
 $menu-font-size: 18px;
-$menu-font-color: $color-text-default;
-$menu-font-color-hover: $color-text-white;
-$menu-background-color: $color-background-default;
+$menu-font-color: $color1;
+$menu-font-color-hover: $color2;
+$menu-background-color: $color2;
 $menu-background-color-hover: $color3;
 $menu-border: 1px solid $color1;
 $menu-item-size: 40px;
@@ -76,10 +75,10 @@ $teaser-training-plan-margin: 10px;
 //$teaser-training-plan-width: ($wrapper-size/4)-($teaser-training-plan-margin*2);
 
 $teaser-training-plan-practice-fontsize : 16px;
-$teaser-training-plan-practice-color : $color-text-white;
+$teaser-training-plan-practice-color : $color2;
 
 $teaser-training-plan-title-fontsize : 16px;
-$teaser-training-plan-title-color : $color-text-light;
+$teaser-training-plan-title-color : $color4;
 
 $teaser-training-plan-description-fontsize : 14px;
 $teaser-training-plan-description-color : $teaser-training-plan-title-color;
@@ -95,6 +94,16 @@ $plan-description-author-fontweight: 400;
 
 $plan-description-description-fontsize: 16px;
 $plan-description-description-fontweight: 300;
+
+//Advice
+$advice-title-color: $color1;
+$advice-title-fontsize: 30px;
+$advice-title-fontweight: 400;
+
+$advice-description-color: $color1;
+$advice-description-fontsize: 16px;
+$advice-description-fontweight: 200;
+
 
 
 
