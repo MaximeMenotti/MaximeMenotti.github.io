@@ -456,8 +456,8 @@ main .weeks .week {
         main .weeks .week > .brick.active .accordion .seance_wrapper .seance_number {
           color: #fff; }
       main .weeks .week > .brick.active .accordion:after {
-        transform: rotate(-180deg) translate(-5px, 5px);
-        color: #fff; }
+        transform: rotate(90deg);
+        background: no-repeat center url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129"><g><path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" fill="#fff"/></g></svg>'); }
     main .weeks .week > .brick ~ .brick {
       margin-top: 0; }
     main .weeks .week > .brick .accordion {
@@ -471,12 +471,14 @@ main .weeks .week {
       transition: all .3s;
       background-color: #fff; }
       main .weeks .week > .brick .accordion:after {
-        content: "^";
+        content: "";
         position: absolute;
         right: 20px;
-        transform: rotate(90deg);
+        width: 20px;
+        height: 100%;
         transition: transform 0.3s ease-in-out;
-        color: #888; }
+        color: #888;
+        background: no-repeat center url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129"><g><path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" fill="#4a4a4a"/></g></svg>'); }
       main .weeks .week > .brick .accordion .seance_wrapper {
         display: flex;
         flex-direction: column;
@@ -696,5 +698,42 @@ main .container-template .link-list {
       background: url("../img/download.svg") no-repeat center left 16px;
       background-size: 15px;
       padding-left: 41px; }
+
+main.mobile .container-program .container-template .select-div {
+  border: 1px solid #4a4a4a;
+  background: #fff;
+  border-radius: 10px;
+  margin: 10px;
+  position: relative; }
+  main.mobile .container-program .container-template .select-div:after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    background: no-repeat center url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129"><g><path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" fill="#4a4a4a"/></g></svg>'); }
+  main.mobile .container-program .container-template .select-div #week-select {
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #4a4a4a;
+    text-align-last: center;
+    border: none;
+    box-shadow: none;
+    background: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: ''; }
+    main.mobile .container-program .container-template .select-div #week-select:focus {
+      outline: none; }
+    main.mobile .container-program .container-template .select-div #week-select option {
+      width: 100%; }
+  main.mobile .container-program .container-template .select-div .weeks .week {
+    margin: 0 10px 30px; }
 
 /*# sourceMappingURL=app.css.map */

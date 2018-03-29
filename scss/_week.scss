@@ -66,8 +66,8 @@ main {
                             }
                         }
                         &:after {
-                            transform: rotate(-180deg) translate(-5px, 5px);
-                            color: $accordion-icon-color-active;
+                            transform: rotate(90deg);
+                            @include arrow-color($color2);
                         }
                     }
                 }
@@ -86,12 +86,14 @@ main {
                     transition: all .3s;
                     background-color: $accordion-background-color;
                     &:after {
-                        content: "^";
+                        content: "";
                         position: absolute;
                         right: 20px;
-                        transform: rotate(90deg);
+                        width: 20px;
+                        height: 100%;
                         transition: transform 0.3s ease-in-out;
                         color: $accordion-icon-color;
+                        @include arrow-color($color1);
                     }
 
                     .seance_wrapper {
