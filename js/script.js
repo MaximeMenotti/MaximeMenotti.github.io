@@ -16,7 +16,7 @@ jQuery(function($) {
         return elementBottom > viewportTop && elementTop < viewportBottom;
     };
 
-    $.fn.undisplay = function () {
+    $.fn.displaynone = function () {
         $(this).addClass('display-none');
         $(this).removeClass('display');
     };
@@ -60,14 +60,24 @@ jQuery(function($) {
     });
 
     $(window).on('load', function() {
-        $('.week > p, .week .brick, .teaser').each(function () {
+        $('.desktop .week > p, .desktop .week .brick, .teaser').each(function () {
             if (!$(this).isInViewport()) $(this).setHidden();
+        });
+    });
+
+    $(document).ready(function() {
+        $('.mobile .week').displaynone();
+        $('#w01.week').display();
+        $('#week-select').change(function () {
+            $('.mobile .week').displaynone();
+            var week = $("#" + $('#week-select').val());
+            week.display();
         });
     });
 
     $('#conseil-link').on('click', function(e){
         e.preventDefault();
-        $('.container-program').undisplay();
+        $('.container-program').displaynone();
         $('.container-advice').display();
 
         $(this).addClass('active');
@@ -78,7 +88,7 @@ jQuery(function($) {
     $('#program-link').on('click', function(e){
         e.preventDefault();
         console.log("hey");
-        $('.container-advice').undisplay();
+        $('.container-advice').displaynone();
         $('.container-program').display();
 
         $(this).addClass('active');
