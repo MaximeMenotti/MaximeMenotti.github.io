@@ -1,0 +1,29 @@
+main.mobile {
+  .container-template {
+    .link-list {
+      list-style-type: none;
+      padding: 5px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      
+      @media #{$lt768} {
+        justify-content: center;
+      }
+
+      li {
+        a {
+          @include training-plan-button();
+
+          &.download {
+            background: url("../img/download.svg") no-repeat center left 16px;
+            background-size: 15px;
+            padding-left: 41px;
+          }
+        }
+      }
+    }
+  }
+}

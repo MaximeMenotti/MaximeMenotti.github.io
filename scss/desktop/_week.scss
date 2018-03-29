@@ -1,0 +1,219 @@
+main.desktop {
+    .weeks {
+        .week {
+            margin: 30px 10px;
+            > p {
+                margin-bottom: 10px;
+                text-align: center;
+                transition: all $week-animation-time;
+                &.title {
+                    font-size: $title-week-font-size;
+                    font-weight: $title-week-fontweight;
+                    color: $title-week-color;
+                }
+                &.subtitle { 
+                    font-size: $subtitle-week-font-size;
+                    font-weight: $subtitle-week-fontweight;
+                    color: $subtitle-week-color;
+                }
+            }
+
+            > .brick {
+                width: 100%;
+                margin-top: 30px;
+                box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.10);
+                transition: all $week-animation-time;
+                &:hover, 
+                &.active {
+                    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.20);
+                }
+                &:hover {
+                    .accordion {
+                        background-color: $accordion-background-color-hover;
+                        .title {
+                            color: $accordion-title-color-hover;
+                        }
+                        .seance_wrapper {
+                            border-right: $accordion-separator-size solid $accordion-separator-color-hover;
+                            .seance_number {
+                                color: $accordion-seance-number-color-hover;
+                            }
+                            > p {
+                                color: $accordion-seance-color-hover;
+                            }
+                        }
+                        &:after {
+                            color: $accordion-icon-color-hover;
+                        }
+                    }
+                }
+                &.active {
+                    .accordion {
+                        background-color: $accordion-background-color-active;
+                        .title {
+                            color: $accordion-title-color-active;
+                        }
+                        .seance_wrapper {
+                            border-right: $accordion-separator-size solid $accordion-separator-color-active;
+                            
+                            > p { 
+                                color: $accordion-seance-color-active;
+                            }
+                            .seance_number{
+                                color: $accordion-seance-number-color-active;
+                            }
+                        }
+                        &:after {
+                            transform: rotate(90deg);
+                            @include arrow-color($color2);
+                        }
+                    }
+                }
+                ~ .brick {
+                    margin-top: 0;
+                }
+                
+                .accordion {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    width: calc(100% - 36px);
+                    padding: 18px;
+                    margin-top: 10px;
+                    cursor: pointer;
+                    transition: all .3s;
+                    background-color: $accordion-background-color;
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        right: 20px;
+                        width: 20px;
+                        height: 100%;
+                        transition: transform 0.3s ease-in-out;
+                        color: $accordion-icon-color;
+                        @include arrow-color($color1);
+                    }
+
+                    .seance_wrapper {
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        padding-right: 10px;
+                        margin-right: 10px;
+                        text-align: center;
+                        font-size: $accordion-seance-fontsize;
+                        border-right: $accordion-separator-size solid $accordion-separator-color;
+                        color: $accordion-seance-color;
+                        
+                        > div, > p {
+                            transition: color 0.3s;
+                        }
+                        
+                        .seance_number {
+                            color: $accordion-seance-number-color;
+                            font-size: $accordion-seance-number-fontsize;
+                        }
+                    }
+                    
+                    .title {
+                        flex: 1;
+                        font-size: $accordion-title-fontsize;
+                        color: $accordion-title-color;
+                        transition: color 0.3s;
+                    }
+                }
+
+                .panel {
+                    width: calc(100% - 40px);
+                    padding: 20px;
+                    display: none;
+
+                    .container-seance {
+                        display: flex;
+                        flex-direction: row;
+                        font-size: 14px;
+
+                        .seance-description {
+                            flex: 3;
+                            margin-right: 40px;
+
+                            > p {
+                                margin-bottom: 20px;
+                                font-weight: 200;
+
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+
+                                &.title {
+                                    font-weight: 400;
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+
+                        .seance-summary {
+                            flex: 2;
+                            text-transform: uppercase;
+                            > p {
+                                text-align: center;
+                                font-weight: 400;
+                                margin-bottom: 20px;
+                            }
+
+
+                            > ul {
+                                ol {
+                                    counter-reset: summary;
+                                }
+
+                                li{
+                                    display: flex;
+                                    flex-direction:column;
+                                    justify-content:center;
+                                    position: relative;
+                                    list-style-type: none;
+                                    counter-increment: summary;
+                                    margin-bottom: 10px;
+                                    font-weight: 200;
+                                    min-height: 40px;
+                                    padding-left: 55px;
+                                    &:last-child {
+                                        margin-bottom: 0;
+                                    }
+                                    &:before {
+                                        content: counter(summary);
+                                        display: block;
+                                        position: absolute;
+                                        top: 0;
+                                        bottom: 0;
+                                        left: 0;
+                                        text-align: center;
+                                        line-height: 40px;
+                                        width: 40px;
+                                        height: 40px;
+                                        background: $color5;
+                                        border-radius: 100%;
+                                        color: $color4;
+                                    }
+                                }
+                            }
+                        }
+
+                        @media #{$lt600} {
+                            flex-direction: column;
+
+                            .seance-description {
+                                margin: 0;
+                            }
+                            .seance-summary {
+                                margin-top: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

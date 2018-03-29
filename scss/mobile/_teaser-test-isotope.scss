@@ -1,32 +1,38 @@
-main {
-    .teaserlist {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-start;
-        flex-wrap: wrap;
-
+main.mobile {
+    .teaserlist-test-isotope {
+        position: relative;
+        padding: 0 auto;
         .teaser {
             position: relative;
-            @include teaser-width($number-items: 4);
-
-            @media #{$lt960} {
-                @include teaser-width($number-items: 3);
-            }
-            @media #{$lt768} {
-                @include teaser-width($number-items: 2);
-            }
-            @media #{$lt480} {
-                @include teaser-width($number-items: 1);
-            }
+            width: 210px;
             margin: $teaser-training-plan-margin;
             box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.10);
             transition: all .3s;
             &:hover {
                 box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.20);
             }
-            
-            
+
+            @media #{$gt480} {
+                &.two-row {
+                    width: 440px;
+                    .teaser-inner {
+                        &.media {
+                            height: 185px;
+                            clip-path: polygon(0 0, 100% 0, 100% 70%,0 100%);
+                        }
+                        &.content {
+                            .description {
+                                display: flex;
+                                flex-direction: row;
+                                flex-wrap: wrap;
+                                justify-content: space-around;
+                                margin-top: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+
             > p {
                 position: absolute;
                 top: 10px;
@@ -78,7 +84,6 @@ main {
                     
                     .description {
                         margin-top: 40px;
-
                         p {
                             padding-left: 30px;
                             margin-top: 15px;

@@ -1,0 +1,79 @@
+main.mobile {
+  .container-advice {
+    margin: 20px 0;
+
+    .title {
+      font-size: $advice-title-fontsize;
+      font-weight: $advice-title-fontweight;
+      color: $advice-title-color;
+    }
+
+    .description {
+      margin: 0 0 20px;
+      padding: 0 10px;
+      font-size: $advice-description-fontsize;
+      font-weight: $advice-description-fontweight;
+      color: $advice-description-color;
+    }
+
+    .advice-page-description {
+      text-align: center;
+    }
+
+    .author-advice {
+      margin: 40px 0;
+      text-align: center;
+
+      .container-template {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        @media #{$lt600} {
+          flex-direction: column;
+        }
+
+        .container-description {
+          flex: 1;
+          margin: 10px;
+
+          .advice-description {
+            margin: 20px 0;
+          }
+
+          a {
+            @include training-plan-button();
+            display: table;
+            margin: auto;
+          }
+        }
+
+        .container-media {
+          flex: 1;
+          margin: 20px;
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+    .linked-advices {
+      .container-template{
+        .linked-advices-title {
+          margin: 20px 0;
+        }
+
+        .teaser-list {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+
+          img {
+            margin: 5px;
+          }
+        }
+      }
+    }
+  }
+}

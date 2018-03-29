@@ -1,39 +1,40 @@
-main {
+main.desktop {
   .plan-description {
     text-align: center;
     margin: 30px 0;
 
-    img {
-      margin: 20px;
-      height: 120px;
-      width: 120px;
-      border-radius: 100%;
-    }
+    .container-template {
+      > img {
+        margin: 20px;
+        height: 120px;
+        width: 120px;
+        border-radius: 100%;
+      }
 
-    h1 {
-      padding: 10px;
-      font-size: $plan-description-title-fontsize;
-      font-weight: $plan-description-title-fontweight;
-    }
+      h1 {
+        padding: 10px;
+        font-size: $plan-description-title-fontsize;
+        font-weight: $plan-description-title-fontweight;
+      }
 
-    .author {
-      padding: 10px;
-      font-size: $plan-description-author-fontsize;
-      font-weight: $plan-description-author-fontweight;
-    }
+      .author {
+        padding: 10px;
+        font-size: $plan-description-author-fontsize;
+        font-weight: $plan-description-author-fontweight;
+      }
 
-    .review {
-      padding: 10px;
-      margin: 20px 0;
-    }
+      .review {
+        padding: 10px;
+        margin: 20px 0;
+      }
 
-    .description {
-      padding: 10px;
-      margin-bottom: 30px;
-      > p {
-        margin: 10px;
-        font-size: $plan-description-description-fontsize;
-        font-weight: $plan-description-description-fontweight;
+      .description {
+        margin-bottom: 30px;
+        > p {
+          margin: 10px;
+          font-size: $plan-description-description-fontsize;
+          font-weight: $plan-description-description-fontweight;
+        }
       }
     }
 
@@ -77,6 +78,10 @@ main {
             background-image: url("../img/calendar.png");
           }
         }
+      }
+
+      > a {
+        @include training-plan-button();
       }
     }
   }

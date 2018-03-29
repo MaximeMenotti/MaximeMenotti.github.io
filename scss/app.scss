@@ -1,16 +1,27 @@
 @import "_variables";
 @import "_mixin";
-
 @import "_animations";
-@import "_advice";
-@import "_general";
 @import "_fonts";
-@import "_teaser";
-@import "teaser-test-grid";
-@import "_teaser-test-isotope";
-@import "_week";
-@import "_menu";
+@import "_general";
 @import "_header";
-@import "_plan-description";
-@import "_links";
-@import "_mobile";
+
+
+
+@import "desktop/_advice";
+@import "desktop/_teaser";
+@import "desktop/_teaser-test-grid";
+@import "desktop/_teaser-test-isotope";
+@import "desktop/_week";
+@import "desktop/_menu";
+@import "desktop/_plan-description";
+@import "desktop/_links";
+
+@import "mobile/_advice";
+@import "mobile/_teaser";
+@import "mobile/_teaser-test-grid";
+@import "mobile/_teaser-test-isotope";
+@import "mobile/_week";
+@import "mobile/_menu";
+@import "mobile/_plan-description";
+@import "mobile/_links";
+@import "mobile/_mobile";
