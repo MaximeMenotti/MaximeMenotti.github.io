@@ -8,9 +8,6 @@ main.mobile {
             margin: $teaser-training-plan-margin;
             box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.10);
             transition: all .3s;
-            &:hover {
-                box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.20);
-            }
 
             @media #{$gt480} {
                 &.two-row {

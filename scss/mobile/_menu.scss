@@ -24,13 +24,6 @@ main.mobile {
                 border-radius: $menu-border-radius;
                 font-size: $menu-font-size;
                 color: $menu-font-color;
-                &:hover {
-                    text-decoration: none;
-                    transition: all 0.3s;
-                    background-color: $menu-background-color-hover;
-                    color: $menu-font-color-hover;
-                    border: $menu-border-hover;
-                }
             }
         }
     }
