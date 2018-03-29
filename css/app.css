@@ -796,16 +796,6 @@ main.mobile .teaserlist {
     @media only screen and (max-width: 480px) {
       main.mobile .teaserlist .teaser {
         width: calc((100% / 1) - 20px); } }
-    main.mobile .teaserlist .teaser > p {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      z-index: 2;
-      font-size: 16px;
-      color: #fff;
-      text-transform: uppercase;
-      text-shadow: 0px 0px 35px rgba(0, 0, 0, 0.6);
-      transition: color .3s; }
     main.mobile .teaserlist .teaser > a {
       display: block;
       position: absolute;
@@ -814,42 +804,49 @@ main.mobile .teaserlist {
       z-index: 3;
       height: 100%;
       width: 100%; }
-    main.mobile .teaserlist .teaser .teaser-inner:not(.media) {
-      padding: 15px; }
     main.mobile .teaserlist .teaser .teaser-inner.media {
       width: 100%;
-      height: 125px;
-      position: relative;
+      height: 100%;
+      position: absolute;
       overflow: hidden;
-      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); }
+      z-index: -1;
+      background: #4a4a4a; }
       main.mobile .teaserlist .teaser .teaser-inner.media img {
-        max-width: 100%;
-        height: auto;
-        width: auto; }
-    main.mobile .teaserlist .teaser .teaser-inner.content p {
-      margin: 15px 0 0;
-      font-size: 16px;
-      color: #888;
-      font-size: 16px; }
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.2; }
+    main.mobile .teaserlist .teaser .teaser-inner.content .container-title {
+      background: #fff;
+      padding: 10px; }
+      main.mobile .teaserlist .teaser .teaser-inner.content .container-title p {
+        font-size: 16px;
+        color: #4a4a4a;
+        font-size: 16px; }
+      main.mobile .teaserlist .teaser .teaser-inner.content .container-title .practice {
+        font-size: 16px;
+        color: #4a4a4a;
+        text-transform: uppercase;
+        transition: color .3s; }
     main.mobile .teaserlist .teaser .teaser-inner.content .description {
-      margin-top: 40px; }
+      margin: 20px 20px 0;
+      padding: 0; }
       main.mobile .teaserlist .teaser .teaser-inner.content .description p {
-        padding-left: 30px;
-        margin-top: 15px;
-        line-height: 18px;
-        background-repeat: no-repeat;
-        background-position: left top;
-        background-size: 16px;
-        color: #888;
+        padding-left: 40px;
+        line-height: 35px;
+        background: no-repeat left center;
+        background-size: 30px;
+        color: #fff;
         font-size: 14px; }
         main.mobile .teaserlist .teaser .teaser-inner.content .description p.difficulty {
-          background-image: url("../img/volume-clear.png"); }
+          background-image: url("../img/volume.png"); }
         main.mobile .teaserlist .teaser .teaser-inner.content .description p.length, main.mobile .teaserlist .teaser .teaser-inner.content .description p.frequency {
-          background-image: url("../img/calendar-clear.png"); }
+          background-image: url("../img/calendar.png"); }
     main.mobile .teaserlist .teaser .teaser-inner.review {
+      margin: 0 10px 10px;
       font-size: 14px;
       text-align: right;
-      color: #888;
+      color: #fff;
       transition: all .3s; }
 
 main.mobile .teaserlist-test-grid {
@@ -1214,8 +1211,10 @@ main.mobile .plan-description {
       background: #4a4a4a;
       overflow: hidden; }
       main.mobile .plan-description .container-description .container-media img {
-        height: auto;
+        height: 100%;
         width: 100%;
+        object-fit: cover;
+        overflow: hidden;
         opacity: 0.2; }
     main.mobile .plan-description .container-description .container-template {
       padding: 30px 0; }

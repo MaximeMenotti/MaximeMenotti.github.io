@@ -48,8 +48,10 @@ main.mobile {
         background: $color1;
         overflow: hidden;
         img {
-          height: auto;
+          height: 100%;
           width: 100%;
+          object-fit: cover;
+          overflow: hidden;
           opacity: 0.2;
         }
       }
