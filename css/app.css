@@ -717,6 +717,7 @@ main .container-template .link-list {
 main.mobile .container-advice {
   margin: 20px 0; }
   main.mobile .container-advice .title {
+    padding: 0 10px;
     font-size: 30px;
     font-weight: 400;
     color: #4a4a4a; }
@@ -727,10 +728,10 @@ main.mobile .container-advice {
     font-weight: 200;
     color: #4a4a4a; }
   main.mobile .container-advice .advice-page-description {
-    text-align: center; }
+    text-align: left; }
   main.mobile .container-advice .author-advice {
     margin: 40px 0;
-    text-align: center; }
+    text-align: left; }
     main.mobile .container-advice .author-advice .container-template {
       display: flex;
       flex-direction: row;
@@ -739,8 +740,7 @@ main.mobile .container-advice {
         main.mobile .container-advice .author-advice .container-template {
           flex-direction: column; } }
       main.mobile .container-advice .author-advice .container-template .container-description {
-        flex: 1;
-        margin: 10px; }
+        flex: 1; }
         main.mobile .container-advice .author-advice .container-template .container-description .advice-description {
           margin: 20px 0; }
         main.mobile .container-advice .author-advice .container-template .container-description a {
@@ -763,7 +763,7 @@ main.mobile .container-advice {
             box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2); }
       main.mobile .container-advice .author-advice .container-template .container-media {
         flex: 1;
-        margin: 20px; }
+        margin: 20px 10px; }
         main.mobile .container-advice .author-advice .container-template .container-media img {
           max-width: 100%; }
   main.mobile .container-advice .linked-advices .container-template .linked-advices-title {

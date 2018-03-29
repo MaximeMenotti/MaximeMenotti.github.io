@@ -3,6 +3,7 @@ main.mobile {
     margin: 20px 0;
 
     .title {
+      padding: 0 10px;
       font-size: $advice-title-fontsize;
       font-weight: $advice-title-fontweight;
       color: $advice-title-color;
@@ -17,12 +18,12 @@ main.mobile {
     }
 
     .advice-page-description {
-      text-align: center;
+      text-align: left;
     }
 
     .author-advice {
       margin: 40px 0;
-      text-align: center;
+      text-align: left;
 
       .container-template {
         display: flex;
@@ -35,7 +36,6 @@ main.mobile {
 
         .container-description {
           flex: 1;
-          margin: 10px;
 
           .advice-description {
             margin: 20px 0;
@@ -50,7 +50,7 @@ main.mobile {
 
         .container-media {
           flex: 1;
-          margin: 20px;
+          margin: 20px 10px;
           img {
             max-width: 100%;
           }
