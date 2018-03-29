@@ -1,4 +1,4 @@
-main.desktop {
+main {
     .teaserlist {
         display: flex;
         flex-direction: row;
@@ -50,15 +50,11 @@ main.desktop {
             }
             
             .teaser-inner {
-                &:not(.media) {
-                    padding: 15px;
-                }
                 &.media {
                     width: 100%;
                     height: 125px;
                     position: relative;
                     overflow: hidden;
-                    //clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2vw),0 100%);
                     clip-path: polygon(0 0, 100% 0, 100% 80%,0 100%);
 
                     img {
@@ -69,41 +65,97 @@ main.desktop {
                 }
                 
                 &.content {
-                    p {
-                        margin: 15px 0 0;
-                        font-size: 16px;
-                        color: $teaser-training-plan-title-color;
-                        font-size: $teaser-training-plan-title-fontsize;
+                    .container-title {
+                        margin: 0 0 20px;
+                        padding: 10px;
+                        p {
+                            color: $teaser-training-plan-title-color;
+                            font-size: $teaser-training-plan-title-fontsize;
+                        }
+
+                        .practice {
+                            text-transform: uppercase;
+                            transition: color .3s;
+                            font-size: $teaser-training-plan-practice-fontsize;
+                            color: $teaser-training-plan-practice-color;
+                        }
                     }
                     
-                    .description {
-                        margin-top: 40px;
+                    .container-description {
+                        margin: 0 20px;
+                        padding: 0;
 
                         p {
-                            padding-left: 30px;
-                            margin-top: 15px;
-                            line-height: 18px;
-                            background-repeat: no-repeat;
-                            background-position: left top;
-                            background-size: 16px;
+                            padding-left: 40px;
+                            line-height: 35px;
+                            background: no-repeat left center;
+                            background-size: 30px;
                             color: $teaser-training-plan-description-color;
                             font-size: $teaser-training-plan-description-fontsize;
                             &.difficulty {
-                                background-image: url("../img/volume-clear.png");
+                                background-image: url("../img/volume.png");
                             }
                             &.length,
                             &.frequency {
-                                background-image: url("../img/calendar-clear.png");
+                                background-image: url("../img/calendar.png");
                             }
                         }
                     }
                 }
-                
+
                 &.review {
+                    margin: 10px 10px;
                     font-size: $teaser-training-plan-description-fontsize;
                     text-align: right;
                     color: $teaser-training-plan-color-review;
                     transition: all .3s;
+                }
+            }
+        }
+    }
+    @media #{$lt600} {
+        .teaserlist {
+            .teaser {
+                .teaser-inner {
+                    &.media {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        z-index: -1;
+                        background: $color1;
+                        clip-path: none;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            opacity: .2;
+                        }
+                    }
+
+                    &.content {
+                        .container-title {
+                            background: $color2;
+
+                            p {
+                                color: $teaser-training-plan-title-color-mobile;
+                            }
+
+                            .practice {
+                                color: $teaser-training-plan-practice-color-mobile;
+                            }
+                        }
+
+                        .container-description {
+                            p {
+                                color: $teaser-training-plan-description-color-mobile;
+                            }
+                        }
+                    }
+
+                    &.review {
+                        color: $teaser-training-plan-color-review-mobile;
+                    }
                 }
             }
         }

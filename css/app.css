@@ -104,6 +104,18 @@ body {
   display: none;
   animation: fadeOut 0.5s ease-out; }
 
+.only-mobile {
+  display: none; }
+
+.only-desktop {
+  display: block; }
+
+@media only screen and (max-width: 600px) {
+  .only-mobile {
+    display: block; }
+
+  .only-desktop {
+    display: none; } }
 nav.header ul {
   list-style-type: none;
   margin: 0;
@@ -184,30 +196,30 @@ main.desktop .container-advice {
     main.desktop .container-advice .linked-advices .container-template .teaser-list img {
       margin: 5px; }
 
-main.desktop .teaserlist {
+main .teaserlist {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap; }
-  main.desktop .teaserlist .teaser {
+  main .teaserlist .teaser {
     position: relative;
     width: calc((100% / 4) - 20px);
     margin: 10px;
     box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
     transition: all .3s; }
     @media only screen and (max-width: 960px) {
-      main.desktop .teaserlist .teaser {
+      main .teaserlist .teaser {
         width: calc((100% / 3) - 20px); } }
     @media only screen and (max-width: 768px) {
-      main.desktop .teaserlist .teaser {
+      main .teaserlist .teaser {
         width: calc((100% / 2) - 20px); } }
     @media only screen and (max-width: 480px) {
-      main.desktop .teaserlist .teaser {
+      main .teaserlist .teaser {
         width: calc((100% / 1) - 20px); } }
-    main.desktop .teaserlist .teaser:hover {
+    main .teaserlist .teaser:hover {
       box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2); }
-    main.desktop .teaserlist .teaser > p {
+    main .teaserlist .teaser > p {
       position: absolute;
       top: 10px;
       left: 10px;
@@ -217,7 +229,7 @@ main.desktop .teaserlist {
       text-transform: uppercase;
       text-shadow: 0px 0px 35px rgba(0, 0, 0, 0.6);
       transition: color .3s; }
-    main.desktop .teaserlist .teaser > a {
+    main .teaserlist .teaser > a {
       display: block;
       position: absolute;
       left: 0;
@@ -225,43 +237,70 @@ main.desktop .teaserlist {
       z-index: 3;
       height: 100%;
       width: 100%; }
-    main.desktop .teaserlist .teaser .teaser-inner:not(.media) {
-      padding: 15px; }
-    main.desktop .teaserlist .teaser .teaser-inner.media {
+    main .teaserlist .teaser .teaser-inner.media {
       width: 100%;
       height: 125px;
       position: relative;
       overflow: hidden;
       clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); }
-      main.desktop .teaserlist .teaser .teaser-inner.media img {
+      main .teaserlist .teaser .teaser-inner.media img {
         max-width: 100%;
         height: auto;
         width: auto; }
-    main.desktop .teaserlist .teaser .teaser-inner.content p {
-      margin: 15px 0 0;
-      font-size: 16px;
-      color: #888;
-      font-size: 16px; }
-    main.desktop .teaserlist .teaser .teaser-inner.content .description {
-      margin-top: 40px; }
-      main.desktop .teaserlist .teaser .teaser-inner.content .description p {
-        padding-left: 30px;
-        margin-top: 15px;
-        line-height: 18px;
-        background-repeat: no-repeat;
-        background-position: left top;
-        background-size: 16px;
+    main .teaserlist .teaser .teaser-inner.content .container-title {
+      margin: 0 0 20px;
+      padding: 10px; }
+      main .teaserlist .teaser .teaser-inner.content .container-title p {
+        color: #888;
+        font-size: 16px; }
+      main .teaserlist .teaser .teaser-inner.content .container-title .practice {
+        text-transform: uppercase;
+        transition: color .3s;
+        font-size: 16px;
+        color: #fff; }
+    main .teaserlist .teaser .teaser-inner.content .container-description {
+      margin: 0 20px;
+      padding: 0; }
+      main .teaserlist .teaser .teaser-inner.content .container-description p {
+        padding-left: 40px;
+        line-height: 35px;
+        background: no-repeat left center;
+        background-size: 30px;
         color: #888;
         font-size: 14px; }
-        main.desktop .teaserlist .teaser .teaser-inner.content .description p.difficulty {
-          background-image: url("../img/volume-clear.png"); }
-        main.desktop .teaserlist .teaser .teaser-inner.content .description p.length, main.desktop .teaserlist .teaser .teaser-inner.content .description p.frequency {
-          background-image: url("../img/calendar-clear.png"); }
-    main.desktop .teaserlist .teaser .teaser-inner.review {
+        main .teaserlist .teaser .teaser-inner.content .container-description p.difficulty {
+          background-image: url("../img/volume.png"); }
+        main .teaserlist .teaser .teaser-inner.content .container-description p.length, main .teaserlist .teaser .teaser-inner.content .container-description p.frequency {
+          background-image: url("../img/calendar.png"); }
+    main .teaserlist .teaser .teaser-inner.review {
+      margin: 10px 10px;
       font-size: 14px;
       text-align: right;
       color: #888;
       transition: all .3s; }
+@media only screen and (max-width: 600px) {
+  main .teaserlist .teaser .teaser-inner.media {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    background: #4a4a4a;
+    clip-path: none; }
+    main .teaserlist .teaser .teaser-inner.media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .2; }
+  main .teaserlist .teaser .teaser-inner.content .container-title {
+    background: #fff; }
+    main .teaserlist .teaser .teaser-inner.content .container-title p {
+      color: #4a4a4a; }
+    main .teaserlist .teaser .teaser-inner.content .container-title .practice {
+      color: #4a4a4a; }
+  main .teaserlist .teaser .teaser-inner.content .container-description p {
+    color: #fff; }
+  main .teaserlist .teaser .teaser-inner.review {
+    color: #fff; } }
 
 main.desktop .teaserlist-test-grid {
   display: grid;
@@ -331,9 +370,9 @@ main.desktop .teaserlist-test-grid {
       font-size: 16px;
       color: #888;
       font-size: 16px; }
-    main.desktop .teaserlist-test-grid .teaser .teaser-inner.content .description {
+    main.desktop .teaserlist-test-grid .teaser .teaser-inner.content .container-description {
       margin-top: 40px; }
-      main.desktop .teaserlist-test-grid .teaser .teaser-inner.content .description p {
+      main.desktop .teaserlist-test-grid .teaser .teaser-inner.content .container-description p {
         padding-left: 30px;
         margin-top: 15px;
         line-height: 18px;
@@ -342,9 +381,9 @@ main.desktop .teaserlist-test-grid {
         background-size: 16px;
         color: #888;
         font-size: 14px; }
-        main.desktop .teaserlist-test-grid .teaser .teaser-inner.content .description p.difficulty {
+        main.desktop .teaserlist-test-grid .teaser .teaser-inner.content .container-description p.difficulty {
           background-image: url("../img/volume-clear.png"); }
-        main.desktop .teaserlist-test-grid .teaser .teaser-inner.content .description p.length, main.desktop .teaserlist-test-grid .teaser .teaser-inner.content .description p.frequency {
+        main.desktop .teaserlist-test-grid .teaser .teaser-inner.content .container-description p.length, main.desktop .teaserlist-test-grid .teaser .teaser-inner.content .container-description p.frequency {
           background-image: url("../img/calendar-clear.png"); }
     main.desktop .teaserlist-test-grid .teaser .teaser-inner.review {
       font-size: 14px;
@@ -410,9 +449,9 @@ main.desktop .teaserlist-test-isotope {
       font-size: 16px;
       color: #888;
       font-size: 16px; }
-    main.desktop .teaserlist-test-isotope .teaser .teaser-inner.content .description {
+    main.desktop .teaserlist-test-isotope .teaser .teaser-inner.content .container-description {
       margin-top: 40px; }
-      main.desktop .teaserlist-test-isotope .teaser .teaser-inner.content .description p {
+      main.desktop .teaserlist-test-isotope .teaser .teaser-inner.content .container-description p {
         padding-left: 30px;
         margin-top: 15px;
         line-height: 18px;
@@ -421,9 +460,9 @@ main.desktop .teaserlist-test-isotope {
         background-size: 16px;
         color: #888;
         font-size: 14px; }
-        main.desktop .teaserlist-test-isotope .teaser .teaser-inner.content .description p.difficulty {
+        main.desktop .teaserlist-test-isotope .teaser .teaser-inner.content .container-description p.difficulty {
           background-image: url("../img/volume-clear.png"); }
-        main.desktop .teaserlist-test-isotope .teaser .teaser-inner.content .description p.length, main.desktop .teaserlist-test-isotope .teaser .teaser-inner.content .description p.frequency {
+        main.desktop .teaserlist-test-isotope .teaser .teaser-inner.content .container-description p.length, main.desktop .teaserlist-test-isotope .teaser .teaser-inner.content .container-description p.frequency {
           background-image: url("../img/calendar-clear.png"); }
     main.desktop .teaserlist-test-isotope .teaser .teaser-inner.review {
       font-size: 14px;
@@ -645,25 +684,25 @@ main.desktop .plan-description {
       justify-content: center;
       flex-wrap: wrap;
       color: #fff; }
-    main.desktop .plan-description .container-description-summary .description-summary {
+    main.desktop .plan-description .container-description-summary .description-summary-inner {
       margin: 20px;
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center; }
-      main.desktop .plan-description .container-description-summary .description-summary .label {
+      main.desktop .plan-description .container-description-summary .description-summary-inner .label {
         font-size: 10px;
         background-repeat: no-repeat;
         background-position: center bottom;
         background-size: 50px;
         min-width: 60px;
         padding-bottom: 55px; }
-      main.desktop .plan-description .container-description-summary .description-summary .title {
+      main.desktop .plan-description .container-description-summary .description-summary-inner .title {
         margin: 15px 5px 5px;
         font-size: 20px; }
-      main.desktop .plan-description .container-description-summary .description-summary.level .label {
+      main.desktop .plan-description .container-description-summary .description-summary-inner.level .label {
         background-image: url("../img/volume.png"); }
-      main.desktop .plan-description .container-description-summary .description-summary.lenght .label, main.desktop .plan-description .container-description-summary .description-summary.frequency .label {
+      main.desktop .plan-description .container-description-summary .description-summary-inner.lenght .label, main.desktop .plan-description .container-description-summary .description-summary-inner.frequency .label {
         background-image: url("../img/calendar.png"); }
     main.desktop .plan-description .container-description-summary > a {
       display: block;
@@ -774,244 +813,6 @@ main.mobile .container-advice {
     justify-content: center; }
     main.mobile .container-advice .linked-advices .container-template .teaser-list img {
       margin: 5px; }
-
-main.mobile .teaserlist {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap; }
-  main.mobile .teaserlist .teaser {
-    position: relative;
-    width: calc((100% / 4) - 20px);
-    margin: 10px;
-    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
-    transition: all .3s; }
-    @media only screen and (max-width: 960px) {
-      main.mobile .teaserlist .teaser {
-        width: calc((100% / 3) - 20px); } }
-    @media only screen and (max-width: 768px) {
-      main.mobile .teaserlist .teaser {
-        width: calc((100% / 2) - 20px); } }
-    @media only screen and (max-width: 480px) {
-      main.mobile .teaserlist .teaser {
-        width: calc((100% / 1) - 20px); } }
-    main.mobile .teaserlist .teaser > a {
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 3;
-      height: 100%;
-      width: 100%; }
-    main.mobile .teaserlist .teaser .teaser-inner.media {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      overflow: hidden;
-      z-index: -1;
-      background: #4a4a4a; }
-      main.mobile .teaserlist .teaser .teaser-inner.media img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.2; }
-    main.mobile .teaserlist .teaser .teaser-inner.content .container-title {
-      background: #fff;
-      padding: 10px; }
-      main.mobile .teaserlist .teaser .teaser-inner.content .container-title p {
-        font-size: 16px;
-        color: #4a4a4a;
-        font-size: 16px; }
-      main.mobile .teaserlist .teaser .teaser-inner.content .container-title .practice {
-        font-size: 16px;
-        color: #4a4a4a;
-        text-transform: uppercase;
-        transition: color .3s; }
-    main.mobile .teaserlist .teaser .teaser-inner.content .description {
-      margin: 20px 20px 0;
-      padding: 0; }
-      main.mobile .teaserlist .teaser .teaser-inner.content .description p {
-        padding-left: 40px;
-        line-height: 35px;
-        background: no-repeat left center;
-        background-size: 30px;
-        color: #fff;
-        font-size: 14px; }
-        main.mobile .teaserlist .teaser .teaser-inner.content .description p.difficulty {
-          background-image: url("../img/volume.png"); }
-        main.mobile .teaserlist .teaser .teaser-inner.content .description p.length, main.mobile .teaserlist .teaser .teaser-inner.content .description p.frequency {
-          background-image: url("../img/calendar.png"); }
-    main.mobile .teaserlist .teaser .teaser-inner.review {
-      margin: 0 10px 10px;
-      font-size: 14px;
-      text-align: right;
-      color: #fff;
-      transition: all .3s; }
-
-main.mobile .teaserlist-test-grid {
-  display: grid;
-  position: relative;
-  grid-template-columns: 1fr 1fr 1fr 1fr; }
-  @media only screen and (max-width: 960px) {
-    main.mobile .teaserlist-test-grid {
-      grid-template-columns: 1fr 1fr 1fr; } }
-  @media only screen and (max-width: 768px) {
-    main.mobile .teaserlist-test-grid {
-      grid-template-columns: 1fr 1fr; } }
-  @media only screen and (max-width: 480px) {
-    main.mobile .teaserlist-test-grid {
-      grid-template-columns: 1fr; } }
-  main.mobile .teaserlist-test-grid .teaser {
-    position: relative;
-    margin: 10px;
-    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
-    transition: all .3s; }
-    @media only screen and (min-width: 481px) {
-      main.mobile .teaserlist-test-grid .teaser:first-child {
-        grid-column: 1 / 3;
-        grid-row: 1; }
-        main.mobile .teaserlist-test-grid .teaser:first-child .teaser-inner.media {
-          height: 185px;
-          clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%); }
-        main.mobile .teaserlist-test-grid .teaser:first-child .teaser-inner.content .description {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          justify-content: space-around;
-          margin-top: 30px; } }
-    main.mobile .teaserlist-test-grid .teaser > p {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      z-index: 2;
-      font-size: 16px;
-      color: #fff;
-      text-transform: uppercase;
-      text-shadow: 0px 0px 35px rgba(0, 0, 0, 0.6);
-      transition: color .3s; }
-    main.mobile .teaserlist-test-grid .teaser > a {
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 3;
-      height: 100%;
-      width: 100%; }
-    main.mobile .teaserlist-test-grid .teaser .teaser-inner:not(.media) {
-      padding: 15px; }
-    main.mobile .teaserlist-test-grid .teaser .teaser-inner.media {
-      width: 100%;
-      height: 125px;
-      position: relative;
-      overflow: hidden;
-      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); }
-      main.mobile .teaserlist-test-grid .teaser .teaser-inner.media img {
-        max-width: 100%;
-        height: auto;
-        width: auto; }
-    main.mobile .teaserlist-test-grid .teaser .teaser-inner.content p {
-      margin: 15px 0 0;
-      font-size: 16px;
-      color: #888;
-      font-size: 16px; }
-    main.mobile .teaserlist-test-grid .teaser .teaser-inner.content .description {
-      margin-top: 40px; }
-      main.mobile .teaserlist-test-grid .teaser .teaser-inner.content .description p {
-        padding-left: 30px;
-        margin-top: 15px;
-        line-height: 18px;
-        background-repeat: no-repeat;
-        background-position: left top;
-        background-size: 16px;
-        color: #888;
-        font-size: 14px; }
-        main.mobile .teaserlist-test-grid .teaser .teaser-inner.content .description p.difficulty {
-          background-image: url("../img/volume-clear.png"); }
-        main.mobile .teaserlist-test-grid .teaser .teaser-inner.content .description p.length, main.mobile .teaserlist-test-grid .teaser .teaser-inner.content .description p.frequency {
-          background-image: url("../img/calendar-clear.png"); }
-    main.mobile .teaserlist-test-grid .teaser .teaser-inner.review {
-      font-size: 14px;
-      text-align: right;
-      color: #888;
-      transition: all .3s; }
-
-main.mobile .teaserlist-test-isotope {
-  position: relative;
-  padding: 0 auto; }
-  main.mobile .teaserlist-test-isotope .teaser {
-    position: relative;
-    width: 210px;
-    margin: 10px;
-    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
-    transition: all .3s; }
-    @media only screen and (min-width: 481px) {
-      main.mobile .teaserlist-test-isotope .teaser.two-row {
-        width: 440px; }
-        main.mobile .teaserlist-test-isotope .teaser.two-row .teaser-inner.media {
-          height: 185px;
-          clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%); }
-        main.mobile .teaserlist-test-isotope .teaser.two-row .teaser-inner.content .description {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          justify-content: space-around;
-          margin-top: 30px; } }
-    main.mobile .teaserlist-test-isotope .teaser > p {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      z-index: 2;
-      font-size: 16px;
-      color: #fff;
-      text-transform: uppercase;
-      text-shadow: 0px 0px 35px rgba(0, 0, 0, 0.6);
-      transition: color .3s; }
-    main.mobile .teaserlist-test-isotope .teaser > a {
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 3;
-      height: 100%;
-      width: 100%; }
-    main.mobile .teaserlist-test-isotope .teaser .teaser-inner:not(.media) {
-      padding: 15px; }
-    main.mobile .teaserlist-test-isotope .teaser .teaser-inner.media {
-      width: 100%;
-      height: 125px;
-      position: relative;
-      overflow: hidden;
-      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); }
-      main.mobile .teaserlist-test-isotope .teaser .teaser-inner.media img {
-        max-width: 100%;
-        height: auto;
-        width: auto; }
-    main.mobile .teaserlist-test-isotope .teaser .teaser-inner.content p {
-      margin: 15px 0 0;
-      font-size: 16px;
-      color: #888;
-      font-size: 16px; }
-    main.mobile .teaserlist-test-isotope .teaser .teaser-inner.content .description {
-      margin-top: 40px; }
-      main.mobile .teaserlist-test-isotope .teaser .teaser-inner.content .description p {
-        padding-left: 30px;
-        margin-top: 15px;
-        line-height: 18px;
-        background-repeat: no-repeat;
-        background-position: left top;
-        background-size: 16px;
-        color: #888;
-        font-size: 14px; }
-        main.mobile .teaserlist-test-isotope .teaser .teaser-inner.content .description p.difficulty {
-          background-image: url("../img/volume-clear.png"); }
-        main.mobile .teaserlist-test-isotope .teaser .teaser-inner.content .description p.length, main.mobile .teaserlist-test-isotope .teaser .teaser-inner.content .description p.frequency {
-          background-image: url("../img/calendar-clear.png"); }
-    main.mobile .teaserlist-test-isotope .teaser .teaser-inner.review {
-      font-size: 14px;
-      text-align: right;
-      color: #888;
-      transition: all .3s; }
 
 main.mobile .weeks .week {
   margin: 30px 10px; }
@@ -1211,11 +1012,9 @@ main.mobile .plan-description {
       background: #4a4a4a;
       overflow: hidden; }
       main.mobile .plan-description .container-description .container-media img {
-        height: 100%;
+        height: auto;
         width: 100%;
-        object-fit: cover;
-        overflow: hidden;
-        opacity: 0.2; }
+        opacity: 0.3; }
     main.mobile .plan-description .container-description .container-template {
       padding: 30px 0; }
       main.mobile .plan-description .container-description .container-template a {
@@ -1245,14 +1044,14 @@ main.mobile .plan-description {
         justify-content: center;
         flex-wrap: wrap;
         color: #fff; }
-        main.mobile .plan-description .container-description .container-template .container-description-summary .description-summary {
+        main.mobile .plan-description .container-description .container-template .container-description-summary .description-summary-inner {
           flex: 1;
           margin: 0 5px 20px;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center; }
-          main.mobile .plan-description .container-description .container-template .container-description-summary .description-summary .label {
+          main.mobile .plan-description .container-description .container-template .container-description-summary .description-summary-inner .label {
             font-size: 10px;
             background-repeat: no-repeat;
             background-position: center bottom;
@@ -1260,12 +1059,12 @@ main.mobile .plan-description {
             min-width: 60px;
             padding-bottom: 55px;
             text-align: center; }
-          main.mobile .plan-description .container-description .container-template .container-description-summary .description-summary .title {
+          main.mobile .plan-description .container-description .container-template .container-description-summary .description-summary-inner .title {
             margin: 15px 5px 5px;
             font-size: 14px; }
-          main.mobile .plan-description .container-description .container-template .container-description-summary .description-summary.level .label {
+          main.mobile .plan-description .container-description .container-template .container-description-summary .description-summary-inner.level .label {
             background-image: url("../img/volume.png"); }
-          main.mobile .plan-description .container-description .container-template .container-description-summary .description-summary.lenght .label, main.mobile .plan-description .container-description .container-template .container-description-summary .description-summary.frequency .label {
+          main.mobile .plan-description .container-description .container-template .container-description-summary .description-summary-inner.lenght .label, main.mobile .plan-description .container-description .container-template .container-description-summary .description-summary-inner.frequency .label {
             background-image: url("../img/calendar.png"); }
 
 main.mobile .container-template .link-list {

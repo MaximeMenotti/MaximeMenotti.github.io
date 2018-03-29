@@ -67,7 +67,7 @@ jQuery(function($) {
 
     $(document).ready(function() {
         $('.mobile .week').displaynone();
-        $('#w01.week').display();
+        $('.week:first-child').display();
         $('#week-select').change(function () {
             $('.mobile .week').displaynone();
             var week = $("#" + $('#week-select').val());
@@ -80,19 +80,18 @@ jQuery(function($) {
         $('.container-program').displaynone();
         $('.container-advice').display();
 
+        $('.link-list a').removeClass('active');
         $(this).addClass('active');
-        $('#program-link').removeClass('active');
         return false;
     });
 
     $('#program-link').on('click', function(e){
         e.preventDefault();
-        console.log("hey");
         $('.container-advice').displaynone();
         $('.container-program').display();
 
+        $('.link-list a').removeClass('active');
         $(this).addClass('active');
-        $('#conseil-link').removeClass('active');
         return false;
     });
 });

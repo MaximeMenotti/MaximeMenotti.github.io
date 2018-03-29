@@ -85,3 +85,21 @@ body {
     animation: fadeOut $switch-page-animation-time ease-out;
   }
 }
+
+.only-mobile {
+  display: none;
+}
+
+.only-desktop {
+  display: block;
+}
+
+@media #{$lt600} {
+  .only-mobile {
+    display: block;
+  }
+
+  .only-desktop {
+    display: none;
+  }
+}
