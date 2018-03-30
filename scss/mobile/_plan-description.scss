@@ -15,6 +15,20 @@ main.mobile {
         padding: 10px;
         font-size: $plan-description-title-fontsize;
         font-weight: $plan-description-title-fontweight;
+
+        &::first-letter {
+          color: $color3;
+        }
+
+        &:after {
+          content:"";
+          width: 100px;
+          height: 5px;
+          display: block;
+          background: $color3;
+          margin: 20px 0 5px;
+        }
+
       }
 
       .author {
@@ -24,8 +38,8 @@ main.mobile {
       }
 
       .review {
-        padding: 10px;
-        margin: 20px 0;
+        padding: 0px;
+        margin: 0 10px 40px;
       }
 
       .description {

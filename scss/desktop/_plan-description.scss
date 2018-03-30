@@ -15,17 +15,24 @@ main.desktop {
         padding: 10px;
         font-size: $plan-description-title-fontsize;
         font-weight: $plan-description-title-fontweight;
+        &::first-letter {
+          color: $color3;
+        }
+
+        &:after {
+          content:"";
+          width: 100px;
+          height: 5px;
+          display: block;
+          background: $color3;
+          margin: 20px auto 5px;
+        }
       }
 
       .author {
         padding: 10px;
         font-size: $plan-description-author-fontsize;
         font-weight: $plan-description-author-fontweight;
-      }
-
-      .review {
-        padding: 10px;
-        margin: 20px 0;
       }
 
       .description {
@@ -40,6 +47,7 @@ main.desktop {
 
     .container-description-summary {
       background-color: $color1;
+      border-top: 8px solid $color3;
       .container-template {
         display: flex;
         flex-direction: row;

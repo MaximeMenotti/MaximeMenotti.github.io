@@ -1,4 +1,4 @@
-main.desktop {
+main {
     .weeks {
         .week {
             margin: 30px 10px;
@@ -10,6 +10,9 @@ main.desktop {
                     font-size: $title-week-font-size;
                     font-weight: $title-week-fontweight;
                     color: $title-week-color;
+                    &::first-letter{
+                        color: $color3;
+                    }
                 }
                 &.subtitle { 
                     font-size: $subtitle-week-font-size;
@@ -43,7 +46,7 @@ main.desktop {
                             }
                         }
                         &:after {
-                            color: $accordion-icon-color-hover;
+                            @include arrow-color($accordion-icon-color-hover);
                         }
                     }
                 }
@@ -65,7 +68,7 @@ main.desktop {
                         }
                         &:after {
                             transform: rotate(90deg);
-                            @include arrow-color($color2);
+                            @include arrow-color($accordion-icon-color-active);
                         }
                     }
                 }
@@ -90,8 +93,7 @@ main.desktop {
                         width: 20px;
                         height: 100%;
                         transition: transform 0.3s ease-in-out;
-                        color: $accordion-icon-color;
-                        @include arrow-color($color1);
+                        @include arrow-color($accordion-icon-color);
                     }
 
                     .seance_wrapper {
@@ -193,7 +195,7 @@ main.desktop {
                                         line-height: 40px;
                                         width: 40px;
                                         height: 40px;
-                                        background: $color5;
+                                        background: $color6;
                                         border-radius: 100%;
                                         color: $color4;
                                     }

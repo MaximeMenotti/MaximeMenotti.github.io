@@ -10,9 +10,13 @@ $gt480 : "only screen and (min-width: 481px)";
 
 $color1: #4a4a4a;
 $color2: #fff;
-$color3: #0082c3;
+//$color3: #009999;
+$color3: #e84c3d;
+//$color3: #0082C3;
+//$color3: #888;
 $color4: #888;
-$color5: #EEE;
+$color5: #BBB;
+$color6: #EEE;
 
 //Title week
 $title-week-color: $color1;
@@ -34,22 +38,22 @@ $accordion-title-color-hover: $color1;
 $accordion-title-color-active: $color2;
 
 $accordion-seance-fontsize: 16px;
-$accordion-seance-color: $color4;
-$accordion-seance-color-hover: $color1;
-$accordion-seance-color-active: $color2;
+$accordion-seance-color: $accordion-title-color;
+$accordion-seance-color-hover: $accordion-title-color-hover;
+$accordion-seance-color-active: $accordion-title-color-active;
 
 $accordion-seance-number-fontsize: 2em;
 $accordion-seance-number-color: $accordion-seance-color;
 $accordion-seance-number-color-hover: $accordion-seance-color-hover;
 $accordion-seance-number-color-active: $accordion-seance-color-active;
 
-$accordion-icon-color: $accordion-title-color;
-$accordion-icon-color-hover: $accordion-title-color-hover;
-$accordion-icon-color-active: $accordion-title-color-active;
+$accordion-icon-color: $color4;
+$accordion-icon-color-hover: $color3;
+$accordion-icon-color-active: $color2;
 
 $accordion-separator-size: 1px;
 $accordion-separator-color: $color4;
-$accordion-separator-color-hover: $color4;
+$accordion-separator-color-hover: $color3;
 $accordion-separator-color-active: $color2;
 
 $animated: true;
@@ -65,7 +69,7 @@ $menu-font-color: $color1;
 $menu-font-color-hover: $color2;
 $menu-background-color: $color2;
 $menu-background-color-hover: $color3;
-$menu-border: 1px solid $color1;
+$menu-border: 1px solid transparent;
 $menu-item-size: 40px;
 $menu-border-radius: 100%;
 $menu-border-hover: 1px solid $color3;

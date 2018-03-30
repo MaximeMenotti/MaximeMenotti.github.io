@@ -86,6 +86,11 @@ body {
   }
 }
 
+.slidein {
+  opacity: 1;
+  animation: slideIn $switch-page-animation-time ease-out;
+}
+
 .only-mobile {
   display: none;
 }
@@ -101,5 +106,15 @@ body {
 
   .only-desktop {
     display: none;
+  }
+}
+
+.fa-star {
+  color: $color5;
+  &.checked {
+    color: $color3;
+  }
+  &:last-child {
+    margin-right: 10px;
   }
 }

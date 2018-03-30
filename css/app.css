@@ -22,6 +22,13 @@
     display: none;
     opacity: 0;
     transform: scale(0.99); } }
+@keyframes slideIn {
+  from {
+    margin-left: 100%;
+    width: 300%; }
+  to {
+    margin-left: 0%;
+    width: 100%; } }
 @font-face {
   font-family: "Roboto Condensed";
   font-style: normal;
@@ -104,6 +111,10 @@ body {
   display: none;
   animation: fadeOut 0.5s ease-out; }
 
+.slidein {
+  opacity: 1;
+  animation: slideIn 0.5s ease-out; }
+
 .only-mobile {
   display: none; }
 
@@ -116,6 +127,13 @@ body {
 
   .only-desktop {
     display: none; } }
+.fa-star {
+  color: #BBB; }
+  .fa-star.checked {
+    color: #e84c3d; }
+  .fa-star:last-child {
+    margin-right: 10px; }
+
 nav.header ul {
   list-style-type: none;
   margin: 0;
@@ -133,7 +151,7 @@ nav.header li {
     nav.header li a:hover {
       background-color: #111; }
   nav.header li.active {
-    background-color: #0082c3; }
+    background-color: #e84c3d; }
 
 main.desktop .container-advice {
   margin: 20px 0; }
@@ -142,6 +160,8 @@ main.desktop .container-advice {
     font-size: 30px;
     font-weight: 400;
     color: #4a4a4a; }
+    main.desktop .container-advice .title::first-letter {
+      color: #e84c3d; }
   main.desktop .container-advice .description {
     margin: 0 0 20px;
     padding: 0 10px;
@@ -178,7 +198,7 @@ main.desktop .container-advice {
           display: table;
           margin: auto; }
           main.desktop .container-advice .author-advice .container-template .container-description a.active {
-            background: #0082c3;
+            background: #e84c3d;
             color: #fff; }
           main.desktop .container-advice .author-advice .container-template .container-description a:hover {
             box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2); }
@@ -472,55 +492,57 @@ main.desktop .teaserlist-test-isotope {
       color: #888;
       transition: all .3s; }
 
-main.desktop .weeks .week {
+main .weeks .week {
   margin: 30px 10px; }
-  main.desktop .weeks .week > p {
+  main .weeks .week > p {
     margin-bottom: 10px;
     text-align: center;
     transition: all 0.7s; }
-    main.desktop .weeks .week > p.title {
+    main .weeks .week > p.title {
       font-size: 30px;
       font-weight: bold;
       color: #4a4a4a; }
-    main.desktop .weeks .week > p.subtitle {
+      main .weeks .week > p.title::first-letter {
+        color: #e84c3d; }
+    main .weeks .week > p.subtitle {
       font-size: 14px;
       font-weight: 300;
       color: #4a4a4a; }
-  main.desktop .weeks .week > .brick {
+  main .weeks .week > .brick {
     width: 100%;
     margin-top: 30px;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.7s; }
-    main.desktop .weeks .week > .brick:hover, main.desktop .weeks .week > .brick.active {
+    main .weeks .week > .brick:hover, main .weeks .week > .brick.active {
       box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2); }
-    main.desktop .weeks .week > .brick:hover .accordion {
+    main .weeks .week > .brick:hover .accordion {
       background-color: #fff; }
-      main.desktop .weeks .week > .brick:hover .accordion .title {
+      main .weeks .week > .brick:hover .accordion .title {
         color: #4a4a4a; }
-      main.desktop .weeks .week > .brick:hover .accordion .seance_wrapper {
-        border-right: 1px solid #888; }
-        main.desktop .weeks .week > .brick:hover .accordion .seance_wrapper .seance_number {
+      main .weeks .week > .brick:hover .accordion .seance_wrapper {
+        border-right: 1px solid #e84c3d; }
+        main .weeks .week > .brick:hover .accordion .seance_wrapper .seance_number {
           color: #4a4a4a; }
-        main.desktop .weeks .week > .brick:hover .accordion .seance_wrapper > p {
+        main .weeks .week > .brick:hover .accordion .seance_wrapper > p {
           color: #4a4a4a; }
-      main.desktop .weeks .week > .brick:hover .accordion:after {
-        color: #4a4a4a; }
-    main.desktop .weeks .week > .brick.active .accordion {
-      background-color: #0082c3; }
-      main.desktop .weeks .week > .brick.active .accordion .title {
+      main .weeks .week > .brick:hover .accordion:after {
+        background: no-repeat center url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129"><g><path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" style="fill: %23e84c3d;"/></g></svg>'); }
+    main .weeks .week > .brick.active .accordion {
+      background-color: #e84c3d; }
+      main .weeks .week > .brick.active .accordion .title {
         color: #fff; }
-      main.desktop .weeks .week > .brick.active .accordion .seance_wrapper {
+      main .weeks .week > .brick.active .accordion .seance_wrapper {
         border-right: 1px solid #fff; }
-        main.desktop .weeks .week > .brick.active .accordion .seance_wrapper > p {
+        main .weeks .week > .brick.active .accordion .seance_wrapper > p {
           color: #fff; }
-        main.desktop .weeks .week > .brick.active .accordion .seance_wrapper .seance_number {
+        main .weeks .week > .brick.active .accordion .seance_wrapper .seance_number {
           color: #fff; }
-      main.desktop .weeks .week > .brick.active .accordion:after {
+      main .weeks .week > .brick.active .accordion:after {
         transform: rotate(90deg);
         background: no-repeat center url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129"><g><path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" style="fill: %23fff;"/></g></svg>'); }
-    main.desktop .weeks .week > .brick ~ .brick {
+    main .weeks .week > .brick ~ .brick {
       margin-top: 0; }
-    main.desktop .weeks .week > .brick .accordion {
+    main .weeks .week > .brick .accordion {
       position: relative;
       display: flex;
       align-items: center;
@@ -530,16 +552,15 @@ main.desktop .weeks .week {
       cursor: pointer;
       transition: all .3s;
       background-color: #fff; }
-      main.desktop .weeks .week > .brick .accordion:after {
+      main .weeks .week > .brick .accordion:after {
         content: "";
         position: absolute;
         right: 20px;
         width: 20px;
         height: 100%;
         transition: transform 0.3s ease-in-out;
-        color: #888;
-        background: no-repeat center url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129"><g><path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" style="fill: %234a4a4a;"/></g></svg>'); }
-      main.desktop .weeks .week > .brick .accordion .seance_wrapper {
+        background: no-repeat center url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129"><g><path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" style="fill: %23888;"/></g></svg>'); }
+      main .weeks .week > .brick .accordion .seance_wrapper {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -550,45 +571,45 @@ main.desktop .weeks .week {
         font-size: 16px;
         border-right: 1px solid #888;
         color: #888; }
-        main.desktop .weeks .week > .brick .accordion .seance_wrapper > div, main.desktop .weeks .week > .brick .accordion .seance_wrapper > p {
+        main .weeks .week > .brick .accordion .seance_wrapper > div, main .weeks .week > .brick .accordion .seance_wrapper > p {
           transition: color 0.3s; }
-        main.desktop .weeks .week > .brick .accordion .seance_wrapper .seance_number {
+        main .weeks .week > .brick .accordion .seance_wrapper .seance_number {
           color: #888;
           font-size: 2em; }
-      main.desktop .weeks .week > .brick .accordion .title {
+      main .weeks .week > .brick .accordion .title {
         flex: 1;
         font-size: 16px;
         color: #888;
         transition: color 0.3s; }
-    main.desktop .weeks .week > .brick .panel {
+    main .weeks .week > .brick .panel {
       width: calc(100% - 40px);
       padding: 20px;
       display: none; }
-      main.desktop .weeks .week > .brick .panel .container-seance {
+      main .weeks .week > .brick .panel .container-seance {
         display: flex;
         flex-direction: row;
         font-size: 14px; }
-        main.desktop .weeks .week > .brick .panel .container-seance .seance-description {
+        main .weeks .week > .brick .panel .container-seance .seance-description {
           flex: 3;
           margin-right: 40px; }
-          main.desktop .weeks .week > .brick .panel .container-seance .seance-description > p {
+          main .weeks .week > .brick .panel .container-seance .seance-description > p {
             margin-bottom: 20px;
             font-weight: 200; }
-            main.desktop .weeks .week > .brick .panel .container-seance .seance-description > p:last-child {
+            main .weeks .week > .brick .panel .container-seance .seance-description > p:last-child {
               margin-bottom: 0; }
-            main.desktop .weeks .week > .brick .panel .container-seance .seance-description > p.title {
+            main .weeks .week > .brick .panel .container-seance .seance-description > p.title {
               font-weight: 400;
               text-transform: uppercase; }
-        main.desktop .weeks .week > .brick .panel .container-seance .seance-summary {
+        main .weeks .week > .brick .panel .container-seance .seance-summary {
           flex: 2;
           text-transform: uppercase; }
-          main.desktop .weeks .week > .brick .panel .container-seance .seance-summary > p {
+          main .weeks .week > .brick .panel .container-seance .seance-summary > p {
             text-align: center;
             font-weight: 400;
             margin-bottom: 20px; }
-          main.desktop .weeks .week > .brick .panel .container-seance .seance-summary > ul ol {
+          main .weeks .week > .brick .panel .container-seance .seance-summary > ul ol {
             counter-reset: summary; }
-          main.desktop .weeks .week > .brick .panel .container-seance .seance-summary > ul li {
+          main .weeks .week > .brick .panel .container-seance .seance-summary > ul li {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -599,9 +620,9 @@ main.desktop .weeks .week {
             font-weight: 200;
             min-height: 40px;
             padding-left: 55px; }
-            main.desktop .weeks .week > .brick .panel .container-seance .seance-summary > ul li:last-child {
+            main .weeks .week > .brick .panel .container-seance .seance-summary > ul li:last-child {
               margin-bottom: 0; }
-            main.desktop .weeks .week > .brick .panel .container-seance .seance-summary > ul li:before {
+            main .weeks .week > .brick .panel .container-seance .seance-summary > ul li:before {
               content: counter(summary);
               display: block;
               position: absolute;
@@ -616,20 +637,21 @@ main.desktop .weeks .week {
               border-radius: 100%;
               color: #888; }
         @media only screen and (max-width: 600px) {
-          main.desktop .weeks .week > .brick .panel .container-seance {
+          main .weeks .week > .brick .panel .container-seance {
             flex-direction: column; }
-            main.desktop .weeks .week > .brick .panel .container-seance .seance-description {
+            main .weeks .week > .brick .panel .container-seance .seance-description {
               margin: 0; }
-            main.desktop .weeks .week > .brick .panel .container-seance .seance-summary {
+            main .weeks .week > .brick .panel .container-seance .seance-summary {
               margin-top: 30px; } }
 
 main.desktop .menu {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 30px 0; }
+  flex-wrap: wrap;
+  margin: 30px 10px; }
   main.desktop .menu > li {
-    margin-right: 8px;
+    margin: 5px 8px 5px 0;
     list-style: none;
     text-align: center;
     line-height: 40px; }
@@ -642,16 +664,17 @@ main.desktop .menu {
       width: 40px;
       height: 40px;
       background-color: #fff;
-      border: 1px solid #4a4a4a;
+      border: 1px solid transparent;
       border-radius: 100%;
       font-size: 18px;
-      color: #4a4a4a; }
+      color: #4a4a4a;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4); }
       main.desktop .menu > li > a:hover {
         text-decoration: none;
         transition: all 0.3s;
-        background-color: #0082c3;
+        background-color: #e84c3d;
         color: #fff;
-        border: 1px solid #0082c3; }
+        border: 1px solid #e84c3d; }
 
 main.desktop .plan-description {
   text-align: center;
@@ -665,13 +688,19 @@ main.desktop .plan-description {
     padding: 10px;
     font-size: 48px;
     font-weight: 300; }
+    main.desktop .plan-description .container-template h1::first-letter {
+      color: #e84c3d; }
+    main.desktop .plan-description .container-template h1:after {
+      content: "";
+      width: 100px;
+      height: 5px;
+      display: block;
+      background: #e84c3d;
+      margin: 20px auto 5px; }
   main.desktop .plan-description .container-template .author {
     padding: 10px;
     font-size: 20px;
     font-weight: 400; }
-  main.desktop .plan-description .container-template .review {
-    padding: 10px;
-    margin: 20px 0; }
   main.desktop .plan-description .container-template .description {
     margin-bottom: 30px; }
     main.desktop .plan-description .container-template .description > p {
@@ -679,7 +708,8 @@ main.desktop .plan-description {
       font-size: 16px;
       font-weight: 300; }
   main.desktop .plan-description .container-description-summary {
-    background-color: #4a4a4a; }
+    background-color: #4a4a4a;
+    border-top: 8px solid #e84c3d; }
     main.desktop .plan-description .container-description-summary .container-template {
       display: flex;
       flex-direction: row;
@@ -718,7 +748,7 @@ main.desktop .plan-description {
       transition: all 0.3s;
       box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); }
       main.desktop .plan-description .container-description-summary > a.active {
-        background: #0082c3;
+        background: #e84c3d;
         color: #fff; }
       main.desktop .plan-description .container-description-summary > a:hover {
         box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2); }
@@ -746,7 +776,7 @@ main .container-template .link-list {
     transition: all 0.3s;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); }
     main .container-template .link-list li a.active {
-      background: #0082c3;
+      background: #e84c3d;
       color: #fff; }
     main .container-template .link-list li a:hover {
       box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2); }
@@ -763,6 +793,8 @@ main.mobile .container-advice {
     font-size: 30px;
     font-weight: 400;
     color: #4a4a4a; }
+    main.mobile .container-advice .title::first-letter {
+      color: #e84c3d; }
   main.mobile .container-advice .description {
     margin: 0 0 20px;
     padding: 0 10px;
@@ -799,7 +831,7 @@ main.mobile .container-advice {
           display: table;
           margin: auto; }
           main.mobile .container-advice .author-advice .container-template .container-description a.active {
-            background: #0082c3;
+            background: #e84c3d;
             color: #fff; }
           main.mobile .container-advice .author-advice .container-template .container-description a:hover {
             box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2); }
@@ -816,145 +848,6 @@ main.mobile .container-advice {
     justify-content: center; }
     main.mobile .container-advice .linked-advices .container-template .teaser-list img {
       margin: 5px; }
-
-main.mobile .weeks .week {
-  margin: 30px 10px; }
-  main.mobile .weeks .week > p {
-    margin-bottom: 10px;
-    text-align: center;
-    transition: all 0.7s; }
-    main.mobile .weeks .week > p.title {
-      font-size: 30px;
-      font-weight: bold;
-      color: #4a4a4a; }
-    main.mobile .weeks .week > p.subtitle {
-      font-size: 14px;
-      font-weight: 300;
-      color: #4a4a4a; }
-  main.mobile .weeks .week > .brick {
-    width: 100%;
-    margin-top: 30px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.7s; }
-    main.mobile .weeks .week > .brick.active {
-      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2); }
-    main.mobile .weeks .week > .brick.active .accordion {
-      background-color: #0082c3; }
-      main.mobile .weeks .week > .brick.active .accordion .title {
-        color: #fff; }
-      main.mobile .weeks .week > .brick.active .accordion .seance_wrapper {
-        border-right: 1px solid #fff; }
-        main.mobile .weeks .week > .brick.active .accordion .seance_wrapper > p {
-          color: #fff; }
-        main.mobile .weeks .week > .brick.active .accordion .seance_wrapper .seance_number {
-          color: #fff; }
-      main.mobile .weeks .week > .brick.active .accordion:after {
-        transform: rotate(90deg);
-        background: no-repeat center url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129"><g><path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" style="fill: %23fff;"/></g></svg>'); }
-    main.mobile .weeks .week > .brick ~ .brick {
-      margin-top: 0; }
-    main.mobile .weeks .week > .brick .accordion {
-      position: relative;
-      display: flex;
-      align-items: center;
-      width: calc(100% - 36px);
-      padding: 18px;
-      margin-top: 10px;
-      cursor: pointer;
-      transition: all .3s;
-      background-color: #fff; }
-      main.mobile .weeks .week > .brick .accordion:after {
-        content: "";
-        position: absolute;
-        right: 20px;
-        width: 20px;
-        height: 100%;
-        transition: transform 0.3s ease-in-out;
-        color: #888;
-        background: no-repeat center url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129"><g><path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" style="fill: %234a4a4a;"/></g></svg>'); }
-      main.mobile .weeks .week > .brick .accordion .seance_wrapper {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding-right: 10px;
-        margin-right: 10px;
-        text-align: center;
-        font-size: 16px;
-        border-right: 1px solid #888;
-        color: #888; }
-        main.mobile .weeks .week > .brick .accordion .seance_wrapper > div, main.mobile .weeks .week > .brick .accordion .seance_wrapper > p {
-          transition: color 0.3s; }
-        main.mobile .weeks .week > .brick .accordion .seance_wrapper .seance_number {
-          color: #888;
-          font-size: 2em; }
-      main.mobile .weeks .week > .brick .accordion .title {
-        flex: 1;
-        font-size: 16px;
-        color: #888;
-        transition: color 0.3s; }
-    main.mobile .weeks .week > .brick .panel {
-      width: calc(100% - 40px);
-      padding: 20px;
-      display: none; }
-      main.mobile .weeks .week > .brick .panel .container-seance {
-        display: flex;
-        flex-direction: row;
-        font-size: 14px; }
-        main.mobile .weeks .week > .brick .panel .container-seance .seance-description {
-          flex: 3;
-          margin-right: 40px; }
-          main.mobile .weeks .week > .brick .panel .container-seance .seance-description > p {
-            margin-bottom: 20px;
-            font-weight: 200; }
-            main.mobile .weeks .week > .brick .panel .container-seance .seance-description > p:last-child {
-              margin-bottom: 0; }
-            main.mobile .weeks .week > .brick .panel .container-seance .seance-description > p.title {
-              font-weight: 400;
-              text-transform: uppercase; }
-        main.mobile .weeks .week > .brick .panel .container-seance .seance-summary {
-          flex: 2;
-          text-transform: uppercase; }
-          main.mobile .weeks .week > .brick .panel .container-seance .seance-summary > p {
-            text-align: center;
-            font-weight: 400;
-            margin-bottom: 20px; }
-          main.mobile .weeks .week > .brick .panel .container-seance .seance-summary > ul ol {
-            counter-reset: summary; }
-          main.mobile .weeks .week > .brick .panel .container-seance .seance-summary > ul li {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            list-style-type: none;
-            counter-increment: summary;
-            margin-bottom: 10px;
-            font-weight: 200;
-            min-height: 40px;
-            padding-left: 55px; }
-            main.mobile .weeks .week > .brick .panel .container-seance .seance-summary > ul li:last-child {
-              margin-bottom: 0; }
-            main.mobile .weeks .week > .brick .panel .container-seance .seance-summary > ul li:before {
-              content: counter(summary);
-              display: block;
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              left: 0;
-              text-align: center;
-              line-height: 40px;
-              width: 40px;
-              height: 40px;
-              background: #EEE;
-              border-radius: 100%;
-              color: #888; }
-        @media only screen and (max-width: 600px) {
-          main.mobile .weeks .week > .brick .panel .container-seance {
-            flex-direction: column; }
-            main.mobile .weeks .week > .brick .panel .container-seance .seance-description {
-              margin: 0; }
-            main.mobile .weeks .week > .brick .panel .container-seance .seance-summary {
-              margin-top: 30px; } }
 
 main.mobile .menu {
   display: flex;
@@ -975,7 +868,7 @@ main.mobile .menu {
       width: 40px;
       height: 40px;
       background-color: #fff;
-      border: 1px solid #4a4a4a;
+      border: 1px solid transparent;
       border-radius: 100%;
       font-size: 18px;
       color: #4a4a4a; }
@@ -992,13 +885,22 @@ main.mobile .plan-description {
     padding: 10px;
     font-size: 48px;
     font-weight: 300; }
+    main.mobile .plan-description .container-template h1::first-letter {
+      color: #e84c3d; }
+    main.mobile .plan-description .container-template h1:after {
+      content: "";
+      width: 100px;
+      height: 5px;
+      display: block;
+      background: #e84c3d;
+      margin: 20px 0 5px; }
   main.mobile .plan-description .container-template .author {
     padding: 10px;
     font-size: 20px;
     font-weight: 400; }
   main.mobile .plan-description .container-template .review {
-    padding: 10px;
-    margin: 20px 0; }
+    padding: 0px;
+    margin: 0 10px 40px; }
   main.mobile .plan-description .container-template .description {
     margin-bottom: 30px; }
     main.mobile .plan-description .container-template .description > p {
@@ -1038,7 +940,7 @@ main.mobile .plan-description {
         background-size: 15px;
         padding-left: 41px; }
         main.mobile .plan-description .container-description .container-template a.active {
-          background: #0082c3;
+          background: #e84c3d;
           color: #fff; }
         main.mobile .plan-description .container-description .container-template a:hover {
           box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2); }
