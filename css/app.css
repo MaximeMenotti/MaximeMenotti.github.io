@@ -134,6 +134,13 @@ body {
   .fa-star:last-child {
     margin-right: 10px; }
 
+img {
+  opacity: 1;
+  transition: opacity 0.7s; }
+
+img[data-src] {
+  opacity: 0; }
+
 nav.header ul {
   list-style-type: none;
   margin: 0;
@@ -194,14 +201,15 @@ main.desktop .container-advice {
           color: #4a4a4a;
           text-transform: uppercase;
           transition: all 0.3s;
-          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
           display: table;
           margin: auto; }
+          main.desktop .container-advice .author-advice .container-template .container-description a:not(.active) {
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); }
+            main.desktop .container-advice .author-advice .container-template .container-description a:not(.active):hover {
+              box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2); }
           main.desktop .container-advice .author-advice .container-template .container-description a.active {
             background: #e84c3d;
             color: #fff; }
-          main.desktop .container-advice .author-advice .container-template .container-description a:hover {
-            box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2); }
       main.desktop .container-advice .author-advice .container-template .container-media {
         flex: 1;
         margin: 20px 10px; }
@@ -679,7 +687,7 @@ main.desktop .menu {
 main.desktop .plan-description {
   text-align: center;
   margin: 30px 0; }
-  main.desktop .plan-description .container-template > img {
+  main.desktop .plan-description .container-template img {
     margin: 20px;
     height: 120px;
     width: 120px;
@@ -745,13 +753,14 @@ main.desktop .plan-description {
       text-decoration: none;
       color: #4a4a4a;
       text-transform: uppercase;
-      transition: all 0.3s;
-      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); }
+      transition: all 0.3s; }
+      main.desktop .plan-description .container-description-summary > a:not(.active) {
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); }
+        main.desktop .plan-description .container-description-summary > a:not(.active):hover {
+          box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2); }
       main.desktop .plan-description .container-description-summary > a.active {
         background: #e84c3d;
         color: #fff; }
-      main.desktop .plan-description .container-description-summary > a:hover {
-        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2); }
 
 main .container-template .link-list {
   list-style-type: none;
@@ -773,13 +782,14 @@ main .container-template .link-list {
     text-decoration: none;
     color: #4a4a4a;
     text-transform: uppercase;
-    transition: all 0.3s;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); }
+    transition: all 0.3s; }
+    main .container-template .link-list li a:not(.active) {
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); }
+      main .container-template .link-list li a:not(.active):hover {
+        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2); }
     main .container-template .link-list li a.active {
       background: #e84c3d;
       color: #fff; }
-    main .container-template .link-list li a:hover {
-      box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2); }
     main .container-template .link-list li a.download {
       background: no-repeat center left 16px;
       background-image: url('data:image/svg+xml;utf8,<svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <g> <path d="M382.56,233.376C379.968,227.648,374.272,224,368,224h-64V16c0-8.832-7.168-16-16-16h-64c-8.832,0-16,7.168-16,16v208h-64 c-6.272,0-11.968,3.68-14.56,9.376c-2.624,5.728-1.6,12.416,2.528,17.152l112,128c3.04,3.488,7.424,5.472,12.032,5.472 c4.608,0,8.992-2.016,12.032-5.472l112-128C384.192,245.824,385.152,239.104,382.56,233.376z" style="fill: %234a4a4a;"/> </g> <g> <path d="M432,352v96H80v-96H16v128c0,17.696,14.336,32,32,32h416c17.696,0,32-14.304,32-32V352H432z" style="fill: %234a4a4a;"/> </g> </svg>');
@@ -827,14 +837,15 @@ main.mobile .container-advice {
           color: #4a4a4a;
           text-transform: uppercase;
           transition: all 0.3s;
-          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
           display: table;
           margin: auto; }
+          main.mobile .container-advice .author-advice .container-template .container-description a:not(.active) {
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); }
+            main.mobile .container-advice .author-advice .container-template .container-description a:not(.active):hover {
+              box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2); }
           main.mobile .container-advice .author-advice .container-template .container-description a.active {
             background: #e84c3d;
             color: #fff; }
-          main.mobile .container-advice .author-advice .container-template .container-description a:hover {
-            box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2); }
       main.mobile .container-advice .author-advice .container-template .container-media {
         flex: 1;
         margin: 20px 10px; }
@@ -932,18 +943,19 @@ main.mobile .plan-description {
         color: #4a4a4a;
         text-transform: uppercase;
         transition: all 0.3s;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
         display: table;
         margin: auto;
         background: #fff no-repeat center left 16px;
         background-image: url('data:image/svg+xml;utf8,<svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <g> <path d="M382.56,233.376C379.968,227.648,374.272,224,368,224h-64V16c0-8.832-7.168-16-16-16h-64c-8.832,0-16,7.168-16,16v208h-64 c-6.272,0-11.968,3.68-14.56,9.376c-2.624,5.728-1.6,12.416,2.528,17.152l112,128c3.04,3.488,7.424,5.472,12.032,5.472 c4.608,0,8.992-2.016,12.032-5.472l112-128C384.192,245.824,385.152,239.104,382.56,233.376z" style="fill: %234a4a4a;"/> </g> <g> <path d="M432,352v96H80v-96H16v128c0,17.696,14.336,32,32,32h416c17.696,0,32-14.304,32-32V352H432z" style="fill: %234a4a4a;"/> </g> </svg>');
         background-size: 15px;
         padding-left: 41px; }
+        main.mobile .plan-description .container-description .container-template a:not(.active) {
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); }
+          main.mobile .plan-description .container-description .container-template a:not(.active):hover {
+            box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2); }
         main.mobile .plan-description .container-description .container-template a.active {
           background: #e84c3d;
           color: #fff; }
-        main.mobile .plan-description .container-description .container-template a:hover {
-          box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2); }
       main.mobile .plan-description .container-description .container-template .container-description-summary {
         display: flex;
         flex-direction: row;
