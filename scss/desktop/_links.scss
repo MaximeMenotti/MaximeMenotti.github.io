@@ -18,7 +18,8 @@ main {
           @include training-plan-button();
 
           &.download {
-            background: url("../img/download.svg") no-repeat center left 16px;
+            background: no-repeat center left 16px;
+            @include download-color($color1);
             background-size: 15px;
             padding-left: 41px;
           }

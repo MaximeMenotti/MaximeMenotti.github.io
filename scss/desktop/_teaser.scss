@@ -55,6 +55,7 @@ main {
                     height: 125px;
                     position: relative;
                     overflow: hidden;
+                    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%,0 100%);
                     clip-path: polygon(0 0, 100% 0, 100% 80%,0 100%);
 
                     img {
@@ -123,6 +124,7 @@ main {
                         position: absolute;
                         z-index: -1;
                         background: $color1;
+                        -webkit-clip-path: none;
                         clip-path: none;
 
                         img {

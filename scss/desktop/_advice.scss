@@ -3,6 +3,7 @@ main.desktop {
     margin: 20px 0;
 
     .title {
+      padding: 0 10px;
       font-size: $advice-title-fontsize;
       font-weight: $advice-title-fontweight;
       color: $advice-title-color;
@@ -35,7 +36,6 @@ main.desktop {
 
         .container-description {
           flex: 1;
-          margin: 10px;
 
           .advice-description {
             margin: 20px 0;
@@ -50,7 +50,7 @@ main.desktop {
 
         .container-media {
           flex: 1;
-          margin: 20px;
+          margin: 20px 10px;
           img {
             max-width: 100%;
           }
