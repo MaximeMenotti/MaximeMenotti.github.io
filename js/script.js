@@ -1,4 +1,6 @@
 jQuery(function($) {
+    var current_pages = 0;
+
     function scrollToPosition(evt) {
         evt.preventDefault();
         var target = $(evt.currentTarget).attr('href');
@@ -47,10 +49,54 @@ jQuery(function($) {
         }
     });
 
-    $('.menu a').click(function(evt) {
-        scrollToPosition(evt);
+    $(document).ready(function() {
+        for(var i = 1; i < 33; i++){
+            console.log("test");
+            $(".menu").append('<li><a href="#w'+i+'">' + i +'</a></li>');
+        }
+
+        $('.menu a').click(function(evt) {
+            scrollToPosition(evt);
+        });
+
+        console.log($('.menu li').length);
+        paginate();
     });
-    
+
+    function paginate() {
+        if($('.menu li').length > 10) {
+            $('.menu li').each(function( index ) {
+                if(index >= current_pages + 10 || index < current_pages) {
+                    $(this).displaynone();
+                }
+                else {
+                    $(this).display();
+                }
+                console.log(current_pages + " - " + $('.menu li').length);
+
+                if(current_pages === 0) {
+                    $('.button-prev').setHidden();
+                }
+                else {$('.button-prev').setVisible();}
+                if(current_pages+10 >= $('.menu li').length) {
+                    $('.button-next').setHidden();
+                }
+                else {$('.button-next').setVisible();}
+            });
+        }
+    }
+
+    $('.button-next').on('click', function(){
+        current_pages = current_pages + 10;
+        paginate();
+    });
+
+    $('.button-prev').on('click', function(){
+        current_pages = current_pages - 10;
+        if(current_pages < 0) current_pages = 0;
+        paginate();
+    });
+
     $(window).on('ready resize scroll', function() {
         $('.week > p, .week .brick, .teaser').each(function() {
             if ($(this).isInViewport()) {
