@@ -2,7 +2,6 @@ jQuery(function($) {
     var current_pages = 0;
     $(document).ready(function() {
         for(var i = 1; i < 30; i++){
-            console.log("test");
             $(".menu").append('<li><a href="#w'+i+'">' + i +'</a></li>');
         }
 
@@ -10,16 +9,17 @@ jQuery(function($) {
             scrollToPosition(evt);
         });
 
-        console.log($('.menu li').length);
         //paginate();
 
-        $('.mobile .week').displaynone();
-        $('.week:first-child').display();
+        $('.mobile .week').hide();
+        $('.week:first-child').fadeIn(300);
         $('#week-select').change(function () {
-            $('.mobile .week').displaynone();
+            $('.mobile .week').hide();
             var week = $("#" + $('#week-select').val());
-            week.display();
+            week.fadeIn(300);
         });
+
+        $('.container-advice').hide();
 
         $('.accordion').click(function (evt) {
             var pannel = $(evt.currentTarget).next();
@@ -34,8 +34,9 @@ jQuery(function($) {
 
         $('#conseil-link').on('click', function(e){
             e.preventDefault();
-            $('.container-program').displaynone();
-            $('.container-advice').display();
+            $('.container-program').fadeOut(300, function() {
+                $('.container-advice').fadeIn(300);
+            });
 
             $('.link-list a').removeClass('active');
             $(this).addClass('active');
@@ -44,28 +45,14 @@ jQuery(function($) {
 
         $('#program-link').on('click', function(e){
             e.preventDefault();
-            $('.container-advice').displaynone();
-            $('.container-program').display();
+            $('.container-advice').fadeOut(300, function() {
+                $('.container-program').fadeIn(300);
+            });
 
             $('.link-list a').removeClass('active');
             $(this).addClass('active');
             return false;
         });
-
-        $(window).on('ready resize scroll', function() {
-            $('.week > p, .week .brick, .teaser').each(function() {
-                if ($(this).isInViewport()) {
-                    $(this).setVisible();
-                }
-            });
-        });
-
-        $(window).on('load', function() {
-            $('.desktop .week > p, .desktop .week .brick, .teaser').each(function () {
-                if (!$(this).isInViewport()) $(this).setHidden();
-            });
-        });
-
     });
 
     /*function paginate() {

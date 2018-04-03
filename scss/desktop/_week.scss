@@ -86,6 +86,7 @@ main {
                     cursor: pointer;
                     transition: all .3s;
                     background-color: $accordion-background-color;
+                    overflow: hidden;
                     &:after {
                         content: "";
                         position: absolute;
@@ -95,7 +96,7 @@ main {
                         transition: transform 0.3s ease-in-out;
                         @include arrow-color($accordion-icon-color);
                     }
-
+                    
                     .seance_wrapper {
                         display: flex;
                         flex-direction: column;

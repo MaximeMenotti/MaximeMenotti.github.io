@@ -56,41 +56,6 @@ body {
   margin: 0 auto;
 }
 
-.visible {
-  opacity: 1;
-  @if($animated) {
-    transform: scale(1);
-    transition: all $hidden-animation-time;
-  }
-}
-
-.hidden {
-  opacity: 0;
-  @if($animated) {
-    transform: scale(0.95);
-    transition: all $hidden-animation-time;
-  }
-}
-
-.display {
-  display: block;
-  @if($animated) {
-    animation: fadeInFromNone $switch-page-animation-time ease-out;
-  }
-}
-
-.display-none{
-  display: none;
-  @if($animated) {
-    animation: fadeOut $switch-page-animation-time ease-out;
-  }
-}
-
-.slidein {
-  opacity: 1;
-  animation: slideIn $switch-page-animation-time ease-out;
-}
-
 .only-mobile {
   display: none;
 }

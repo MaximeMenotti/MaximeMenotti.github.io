@@ -93,28 +93,6 @@ body {
   max-width: 940px;
   margin: 0 auto; }
 
-.visible {
-  opacity: 1;
-  transform: scale(1);
-  transition: all 0.7s; }
-
-.hidden {
-  opacity: 0;
-  transform: scale(0.95);
-  transition: all 0.7s; }
-
-.display {
-  display: block;
-  animation: fadeInFromNone 0.5s ease-out; }
-
-.display-none {
-  display: none;
-  animation: fadeOut 0.5s ease-out; }
-
-.slidein {
-  opacity: 1;
-  animation: slideIn 0.5s ease-out; }
-
 .only-mobile {
   display: none; }
 
@@ -276,6 +254,20 @@ main .teaserlist {
         max-width: 100%;
         height: auto;
         width: auto; }
+      @media only screen and (max-width: 600px) {
+        main .teaserlist .teaser .teaser-inner.media {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          z-index: -1;
+          background: #4a4a4a;
+          -webkit-clip-path: none;
+          clip-path: none; }
+          main .teaserlist .teaser .teaser-inner.media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: .2; } }
     main .teaserlist .teaser .teaser-inner.content .container-title {
       margin: 0 0 20px;
       padding: 10px; }
@@ -287,6 +279,13 @@ main .teaserlist {
         transition: color .3s;
         font-size: 16px;
         color: #fff; }
+      @media only screen and (max-width: 600px) {
+        main .teaserlist .teaser .teaser-inner.content .container-title {
+          background: #fff; }
+          main .teaserlist .teaser .teaser-inner.content .container-title p {
+            color: #4a4a4a; }
+          main .teaserlist .teaser .teaser-inner.content .container-title .practice {
+            color: #4a4a4a; } }
     main .teaserlist .teaser .teaser-inner.content .container-description {
       margin: 0 20px;
       padding: 0; }
@@ -301,36 +300,18 @@ main .teaserlist {
           background-image: url("../img/volume.png"); }
         main .teaserlist .teaser .teaser-inner.content .container-description p.length, main .teaserlist .teaser .teaser-inner.content .container-description p.frequency {
           background-image: url("../img/calendar.png"); }
+      @media only screen and (max-width: 600px) {
+        main .teaserlist .teaser .teaser-inner.content .container-description p {
+          color: #fff; } }
     main .teaserlist .teaser .teaser-inner.review {
       margin: 10px 10px;
       font-size: 14px;
       text-align: right;
       color: #888;
       transition: all .3s; }
-@media only screen and (max-width: 600px) {
-  main .teaserlist .teaser .teaser-inner.media {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    background: #4a4a4a;
-    -webkit-clip-path: none;
-    clip-path: none; }
-    main .teaserlist .teaser .teaser-inner.media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: .2; }
-  main .teaserlist .teaser .teaser-inner.content .container-title {
-    background: #fff; }
-    main .teaserlist .teaser .teaser-inner.content .container-title p {
-      color: #4a4a4a; }
-    main .teaserlist .teaser .teaser-inner.content .container-title .practice {
-      color: #4a4a4a; }
-  main .teaserlist .teaser .teaser-inner.content .container-description p {
-    color: #fff; }
-  main .teaserlist .teaser .teaser-inner.review {
-    color: #fff; } }
+      @media only screen and (max-width: 600px) {
+        main .teaserlist .teaser .teaser-inner.review {
+          color: #fff; } }
 
 main.desktop .teaserlist-test-grid {
   display: grid;
@@ -559,7 +540,8 @@ main .weeks .week {
       margin-top: 10px;
       cursor: pointer;
       transition: all .3s;
-      background-color: #fff; }
+      background-color: #fff;
+      overflow: hidden; }
       main .weeks .week > .brick .accordion:after {
         content: "";
         position: absolute;
