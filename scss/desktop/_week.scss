@@ -49,6 +49,7 @@ main.desktop {
                             @include arrow-color($accordion-icon-color-hover);
                         }
                         &:before {
+                            transition-delay: .2s;
                             width: calc(100% - 50px);
                         }
                     }
@@ -73,6 +74,7 @@ main.desktop {
                             @include arrow-color($accordion-icon-color-active);
                         }
                         &:before {
+                            transition-delay: 0s;
                             width: calc(100% + 40px);
                         }
                     }
@@ -145,6 +147,7 @@ main.desktop {
                         font-size: $accordion-title-fontsize;
                         color: $accordion-title-color;
                         transition: color $week-animation-time;
+                        transition-delay: .2s;
                         z-index: 1;
                     }
                 }

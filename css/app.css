@@ -517,6 +517,7 @@ main.desktop .weeks .week {
       main.desktop .weeks .week > .brick:hover .accordion:after {
         background: no-repeat center url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129"><g><path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" style="fill: %23e84c3d;"/></g></svg>'); }
       main.desktop .weeks .week > .brick:hover .accordion:before {
+        transition-delay: .2s;
         width: calc(100% - 50px); }
     main.desktop .weeks .week > .brick.active .accordion .title {
       color: #fff; }
@@ -530,6 +531,7 @@ main.desktop .weeks .week {
       transform: rotate(90deg);
       background: no-repeat center url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129"><g><path d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" style="fill: %23fff;"/></g></svg>'); }
     main.desktop .weeks .week > .brick.active .accordion:before {
+      transition-delay: 0s;
       width: calc(100% + 40px); }
     main.desktop .weeks .week > .brick ~ .brick {
       margin-top: 0; }
@@ -588,6 +590,7 @@ main.desktop .weeks .week {
         font-size: 18px;
         color: #888;
         transition: color 0.7s;
+        transition-delay: .2s;
         z-index: 1; }
     main.desktop .weeks .week > .brick .panel {
       width: calc(100% - 40px);
