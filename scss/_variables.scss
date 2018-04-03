@@ -32,13 +32,13 @@ $accordion-background-color: $color2;
 $accordion-background-color-hover: $accordion-background-color;
 $accordion-background-color-active: $color3;
 
-$accordion-title-fontsize: 16px;
+$accordion-title-fontsize: 18px;
 $accordion-title-color: $color4;
-$accordion-title-color-hover: $color1;
+$accordion-title-color-hover: $color2;
 $accordion-title-color-active: $color2;
 
 $accordion-seance-fontsize: 16px;
-$accordion-seance-color: $accordion-title-color;
+$accordion-seance-color: $color2;
 $accordion-seance-color-hover: $accordion-title-color-hover;
 $accordion-seance-color-active: $accordion-title-color-active;
 
@@ -51,7 +51,7 @@ $accordion-icon-color: $color4;
 $accordion-icon-color-hover: $color3;
 $accordion-icon-color-active: $color2;
 
-$accordion-separator-size: 1px;
+$accordion-separator-size: 0px;
 $accordion-separator-color: $color4;
 $accordion-separator-color-hover: $color3;
 $accordion-separator-color-active: $color2;

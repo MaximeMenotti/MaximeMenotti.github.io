@@ -48,11 +48,13 @@ main {
                         &:after {
                             @include arrow-color($accordion-icon-color-hover);
                         }
+                        &:before {
+                            width: calc(100% - 50px);
+                        }
                     }
                 }
                 &.active {
                     .accordion {
-                        background-color: $accordion-background-color-active;
                         .title {
                             color: $accordion-title-color-active;
                         }
@@ -69,6 +71,9 @@ main {
                         &:after {
                             transform: rotate(90deg);
                             @include arrow-color($accordion-icon-color-active);
+                        }
+                        &:before {
+                            width: calc(100% + 40px);
                         }
                     }
                 }
@@ -93,21 +98,37 @@ main {
                         right: 20px;
                         width: 20px;
                         height: 100%;
-                        transition: transform 0.3s ease-in-out;
+                        transition: transform $week-animation-time ease-in-out;
                         @include arrow-color($accordion-icon-color);
                     }
-                    
+                    &:before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: -20px;
+                        bottom: 0;
+                        width: 110px;
+                        transform: skewX(-15deg);
+                        background: $color3;
+                        opacity: 1;
+                        transition: all ease $week-animation-time;
+                        z-index: 0;
+                        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.10);
+                    }
+
                     .seance_wrapper {
                         display: flex;
                         flex-direction: column;
                         flex-wrap: wrap;
                         justify-content: center;
                         padding-right: 10px;
-                        margin-right: 10px;
+                        margin-right: 30px;
                         text-align: center;
                         font-size: $accordion-seance-fontsize;
                         border-right: $accordion-separator-size solid $accordion-separator-color;
                         color: $accordion-seance-color;
+                        z-index: 1;
                         
                         > div, > p {
                             transition: color 0.3s;
@@ -123,7 +144,8 @@ main {
                         flex: 1;
                         font-size: $accordion-title-fontsize;
                         color: $accordion-title-color;
-                        transition: color 0.3s;
+                        transition: color $week-animation-time;
+                        z-index: 1;
                     }
                 }
 
