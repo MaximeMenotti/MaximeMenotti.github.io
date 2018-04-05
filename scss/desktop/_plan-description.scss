@@ -1,95 +1,146 @@
 main.desktop {
   .plan-description {
     text-align: center;
-    margin: 30px 0;
-
-    .container-template {
-      img {
-        margin: 20px;
-        height: 120px;
-        width: 120px;
-        border-radius: 100%;
+    color: $color2;
+    .background {
+      position: relative;
+      padding: 30px 0 120px;
+      background: no-repeat center top;
+      background-size: cover;
+      z-index: -2;
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: $color3;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0.75;
       }
 
       h1 {
         padding: 10px;
         font-size: $plan-description-title-fontsize;
         font-weight: $plan-description-title-fontweight;
-        &::first-letter {
-          color: $color3;
-        }
+        text-transform: uppercase;
+      }
 
-        &:after {
-          content:"";
-          width: 100px;
-          height: 5px;
-          display: block;
-          background: $color3;
-          margin: 20px auto 5px;
+      .review {
+        p {
+          margin: 5px;
+        }
+        .fa-star {
+          color: $color2;
+          &.checked {
+            color: $color2;
+          }
+          &:last-child {
+            margin-right: 10px;
+          }
         }
       }
 
-      .author {
-        padding: 10px;
-        font-size: $plan-description-author-fontsize;
-        font-weight: $plan-description-author-fontweight;
-      }
+      .container-template {
+        .container-description-summary {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          flex-wrap: wrap;
+          color: $color2;
+          .description-summary-inner {
+            margin: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            .label {
+              font-size: 10px;
+              background-repeat: no-repeat;
+              background-position: center bottom;
+              background-size: 50px;
+              min-width: 60px;
+              padding-bottom: 55px;
+            }
+            .title {
+              margin: 15px 5px 5px;
+              font-size: 20px;
+            }
 
-      .description {
-        margin-bottom: 30px;
-        > p {
-          margin: 10px;
-          font-size: $plan-description-description-fontsize;
-          font-weight: $plan-description-description-fontweight;
+            &.level {
+              .label {
+                background-image: url("../img/volume.png");
+              }
+            }
+            &.lenght,
+            &.frequency {
+              .label {
+                background-image: url("../img/calendar.png");
+              }
+            }
+          }
         }
       }
     }
 
-    .container-description-summary {
-      background-color: $color1;
-      border-top: 8px solid $color3;
+    .author {
+      margin-top: -100px;
+      color: $color1;
+      text-align: left;
       .container-template {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        color: $color2;
-      }
-      .description-summary-inner {
-        margin: 20px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        .label {
-          font-size: 10px;
-          background-repeat: no-repeat;
-          background-position: center bottom;
-          background-size: 50px;
-          min-width: 60px;
-          padding-bottom: 55px;
-        }
-        .title{
-          margin: 15px 5px 5px;
-          font-size: 20px;
-        }
-
-        &.level {
-          .label {
-            background-image: url("../img/volume.png");
+        .skew-image {
+          min-height: 120px;
+          width: 150px;
+          padding-left: 20px;
+          margin-left: 30px;
+          position: relative;
+          z-index: 1;
+          clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
+          img {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
           }
         }
 
-        &.lenght,
-        &.frequency {
-          .label {
-            background-image: url("../img/calendar.png");
+        .skew-content {
+          position: relative;
+          background: $color2;
+          margin: -100px 30px 5px 120px;
+          padding: 20px 40px 20px 100px;
+          z-index: 0;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.20);
+
+          @media #{$gt600} {
+            transform: skew(15deg);
+          }
+
+          .author-content {
+            @media #{$gt600} {
+              transform: skew(-15deg);
+            }
+
+            .author-name {
+              font-size: 20px;
+              font-style: italic;
+              font-weight: bold;
+            }
+
+            .author-function {
+              margin-top: 5px;
+              font-size: 16px;
+              font-weight: 200;
+            }
+
+            .author-word {
+              margin-top: 10px;
+              font-size: 14px;
+            }
           }
         }
-      }
-
-      > a {
-        @include training-plan-button();
       }
     }
   }

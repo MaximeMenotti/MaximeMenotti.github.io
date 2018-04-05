@@ -6,13 +6,14 @@ $lt768 : "only screen and (max-width: 768px)";
 $lt960 : "only screen and (max-width: 960px)";
 
 $gt480 : "only screen and (min-width: 481px)";
+$gt600 : "only screen and (min-width: 600px)";
 
 
 $color1: #4a4a4a;
 $color2: #fff;
 //$color3: #009999;
-$color3: #e84c3d;
-//$color3: #0082C3;
+//$color3: #e84c3d;
+$color3: #0082C3;
 //$color3: #888;
 $color4: #888;
 $color5: #BBB;
@@ -95,7 +96,7 @@ $teaser-training-plan-color-review-mobile: $color2;
 
 //Plan description
 $plan-description-title-fontsize: 48px;
-$plan-description-title-fontweight: 300;
+$plan-description-title-fontweight: 400;
 
 $plan-description-author-fontsize: 20px;
 $plan-description-author-fontweight: 400;
