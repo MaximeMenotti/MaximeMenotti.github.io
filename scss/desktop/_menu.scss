@@ -1,37 +1,138 @@
 main.desktop {
     .menu {
         display: flex;
-        flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
         margin: 30px 10px;
-        > li {
-            margin: 5px 8px 5px 0;
-            list-style: none;
-            text-align: center;
-            line-height: $menu-item-size;
-            &:last-child {
-                margin-right: 0;
-            }
-
-            > a {
-                display: block;
-                text-decoration: none;
-                font-weight: bold;
-                width: $menu-item-size;
-                height: $menu-item-size;
-                background-color: $menu-background-color;
-                border: $menu-border;
-                border-radius: $menu-border-radius;
-                font-size: $menu-font-size;
+        align-items: center;
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            > li {
+                list-style: none;
+                position: relative;
+                text-align: center;
+                margin: 10px 0px;
+                line-height: $menu-item-size;
+                //box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.40);
                 color: $menu-font-color;
-                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.40);
+
+                &:not(:last-child):not(:first-child) {
+                    &:after {
+                        content: " ";
+                        position: absolute;
+                        display: block;
+                        width: 85%;
+                        height: 100%;
+                        top: 0;
+                        left: -5%;
+                        z-index: -1;
+                        background: $color6;
+                        transform-origin: bottom left;
+                        transform: skew(-15deg, 0deg);
+                    }
+                }
+
+                &.alone {
+                    background: $color6;
+                    &:hover {
+                        background: $color3;
+                    }
+                }
+
+                &:first-child {
+                    a {
+                        padding: 0 20px 0 10px;
+                    }
+                    &:before {
+                        content: " ";
+                        position: absolute;
+                        display: block;
+                        width: 85%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        z-index: -1;
+                        background: $color6;
+                        transform-origin: bottom left;
+                    }
+
+                    &:after {
+                        content: " ";
+                        position: absolute;
+                        display: block;
+                        width: 85%;
+                        height: 100%;
+                        top: 0;
+                        right: 10%;
+                        z-index: -1;
+                        background: $color6;
+                        transform-origin: bottom left;
+                        transform: skew(-15deg, 0deg);
+                    }
+                }
+
+                &:last-child {
+                        a {
+                            padding: 0 10px 0 20px;
+                        }
+
+                        &:before {
+                            content: " ";
+                            position: absolute;
+                            display: block;
+                            width: 85%;
+                            height: 100%;
+                            top: 0;
+                            right: 0;
+                            z-index: -1;
+                            background: $color6;
+                            transform-origin: bottom left;
+                        }
+
+                        &:after {
+                            content: " ";
+                            position: absolute;
+                            display: block;
+                            width: 85%;
+                            height: 100%;
+                            top: 0;
+                            left: -2%;
+                            z-index: -1;
+                            background: $color6;
+                            transform-origin: bottom left;
+                            transform: skew(-15deg, 0deg);
+                        }
+                }
+
                 &:hover {
                     text-decoration: none;
                     transition: all 0.3s;
-                    background-color: $menu-background-color-hover;
-                    color: $menu-font-color-hover;
-                    border: $menu-border-hover;
+                    &:first-child,
+                    &:last-child,
+                    &:not(:last-child):not(:first-child) {
+                        &:before,
+                        &:after {
+                            transition: all 0.3s;
+                            background-color: $menu-background-color-hover;
+                        }
+                    }
+
+                    a {
+                        color: $menu-font-color-hover;
+                    }
+                }
+
+                > a {
+                    display: block;
+                    text-decoration: none;
+                    font-weight: bold;
+                    border: $menu-border;
+                    font-size: $menu-font-size;
+                    color: $menu-font-color;
+                    padding: 0 20px;
                 }
             }
         }

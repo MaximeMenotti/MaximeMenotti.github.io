@@ -1,8 +1,19 @@
 jQuery(function($) {
-    var current_pages = 0;
+    var current_pages=0, pageNum, nbWeeks, pageElement, pageNumber, reviews, week, pannel, displayNumberReview = 4, currentPage, currentPageIndex;
     $(document).ready(function() {
-        for(var i = 1; i < 30; i++){
-            $(".menu").append('<li><a href="#w'+i+'">' + i +'</a></li>');
+        nbWeeks = $('.weeks > .week').length;
+        if(nbWeeks > 1) {
+            for (var i = 1; i <= nbWeeks; i++) {
+                if (i === 1 || i === nbWeeks) {
+                    $(".menu > ul").append('<li><a href="#w' + i + '">' + 'SEMAINE ' + i + '</a></li>');
+                }
+                else {
+                    $(".menu > ul").append('<li><a href="#w' + i + '">' + i + '</a></li>');
+                }
+            }
+        }
+        else {
+            $(".menu > ul").append('<li class="alone"><a href="#w' + 1 + '">' + 'SEMAINE ' + 1 + '</a></li>');
         }
 
         $('.menu a').click(function(evt) {
@@ -15,14 +26,14 @@ jQuery(function($) {
         $('.week:first-child').fadeIn(300);
         $('#week-select').change(function () {
             $('.mobile .week').hide();
-            var week = $("#" + $('#week-select').val());
+            week = $("#" + $('#week-select').val());
             week.fadeIn(300);
         });
 
         $('.container-advice').hide();
 
         $('.accordion').click(function (evt) {
-            var pannel = $(evt.currentTarget).next();
+            pannel = $(evt.currentTarget).next();
             if (pannel.is(':hidden')) {
                 pannel.slideDown('0.3s');
                 pannel.parent().toggleClass('active');
@@ -53,39 +64,60 @@ jQuery(function($) {
             $(this).addClass('active');
             return false;
         });
-    });
+        reviews = $('.container-reviews > .container-review');
+        reviews.each(function () {
+            console.log($(this).index());
+            if ($(this).index() >= displayNumberReview) {
+                $(this).hide();
+            }
+        });
 
-    /*function paginate() {
-        if($('.menu li').length > 10) {
-            $('.menu li').each(function( index ) {
-                if(index >= current_pages + 10 || index < current_pages) {
-                    $(this).displaynone();
-                }
-                else {
-                    $(this).display();
-                }
-                console.log(current_pages + " - " + $('.menu li').length);
+        pageNumber = Math.ceil(reviews.length / displayNumberReview);
+        if(pageNumber > 1) {
+            $('.container-reviews > .pagination').show();
+            for(var j = 1; j <= pageNumber; j++){
+                $('.container-reviews > .pagination > ul').append("<li>"+ j +"</li>");
+            }
+        }
+        pageElement = $('.container-reviews > .pagination > ul > li');
+        pageElement.first().addClass('active');
+        pageElement.click(function () {
+            pageNum = $(this).index();
+            if(!$(this).hasClass('active')) {
+                $('.container-reviews > .pagination > ul > li').removeClass('active');
+                $(this).addClass('active');
+                displayReviewPage(pageNum);
+            }
+        });
 
-                if(current_pages === 0) {
-                    $('.button-prev').setHidden();
-                }
-                else {$('.button-prev').setVisible();}
-                if(current_pages+10 >= $('.menu li').length) {
-                    $('.button-next').setHidden();
-                }
-                else {$('.button-next').setVisible();}
+        $('.container-reviews > .pagination > .previous').click(function () {
+            currentPage = $('.container-reviews > .pagination > ul > li.active');
+            currentPageIndex = currentPage.index();
+            if(currentPageIndex > 0) {
+                currentPage.removeClass('active');
+                $('.container-reviews > .pagination > ul > li').eq(currentPageIndex - 1).addClass('active');
+                displayReviewPage(currentPageIndex - 1);
+            }
+        });
+
+        $('.container-reviews > .pagination > .next').click(function () {
+            currentPage = $('.container-reviews > .pagination > ul > li.active');
+            currentPageIndex = currentPage.index();
+            if(currentPageIndex < pageNumber-1) {
+                currentPage.removeClass('active');
+                $('.container-reviews > .pagination > ul > li').eq(currentPageIndex + 1).addClass('active');
+                displayReviewPage(currentPageIndex + 1);
+            }
+        });
+
+        function displayReviewPage(page){
+            reviews.hide();
+            delay = 100;
+            reviews.slice(page*displayNumberReview, page*displayNumberReview + displayNumberReview).each(function(){
+                $(this).css({'display':'block', 'opacity':'0'});
+                $(this).delay(delay).animate({opacity: '1'}, 400);
+                delay += 100;
             });
         }
-    }
-
-    $('.button-next').on('click', function(){
-        current_pages = current_pages + 10;
-        paginate();
     });
-
-    $('.button-prev').on('click', function(){
-        current_pages = current_pages - 10;
-        if(current_pages < 0) current_pages = 0;
-        paginate();
-    });*/
 });

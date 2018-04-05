@@ -184,6 +184,10 @@ main.desktop {
                         .seance-summary {
                             flex: 2;
                             text-transform: uppercase;
+                            padding: 20px 20px 60px;
+                            background: $color6;
+                            height: 100%;
+                            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px),0 100%);
                             > p {
                                 text-align: center;
                                 font-weight: 400;
@@ -221,9 +225,9 @@ main.desktop {
                                         line-height: 40px;
                                         width: 40px;
                                         height: 40px;
-                                        background: $color6;
+                                        background: $color2;
                                         border-radius: 100%;
-                                        color: $color4;
+                                        color: $color1;
                                     }
                                 }
                             }
