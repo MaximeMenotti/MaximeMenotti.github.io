@@ -10,6 +10,7 @@ main {
         @include download-color($color1);
         background-size: 15px;
         padding-left: 41px;
+        margin-left: auto;
       }
       .link-list {
         list-style-type: none;

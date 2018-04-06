@@ -16,10 +16,6 @@ main.mobile {
         font-size: $plan-description-title-fontsize;
         font-weight: $plan-description-title-fontweight;
 
-        &::first-letter {
-          color: $color3;
-        }
-
         &:after {
           content:"";
           width: 100px;

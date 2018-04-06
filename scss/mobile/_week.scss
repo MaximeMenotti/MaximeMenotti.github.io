@@ -10,9 +10,6 @@ main.mobile {
                     font-size: $title-week-font-size;
                     font-weight: $title-week-fontweight;
                     color: $title-week-color;
-                    &::first-letter{
-                        color: $color3;
-                    }
                 }
                 &.subtitle { 
                     font-size: $subtitle-week-font-size;
@@ -111,6 +108,7 @@ main.mobile {
                         }
                         
                         .seance_number {
+                            margin: 5px 0;
                             color: $accordion-seance-number-color;
                             font-size: $accordion-seance-number-fontsize;
                         }

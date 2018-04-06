@@ -7,9 +7,6 @@ main {
         font-size: $title-review-font-size;
         font-weight: $title-review-fontweight;
         color: $title-review-color;
-        &::first-letter{
-          color: $color3;
-        }
       }
       .note {
         display: flex;

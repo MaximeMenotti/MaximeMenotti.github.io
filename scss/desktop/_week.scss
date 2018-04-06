@@ -10,9 +10,6 @@ main.desktop {
                     font-size: $title-week-font-size;
                     font-weight: $title-week-fontweight;
                     color: $title-week-color;
-                    &::first-letter{
-                        color: $color3;
-                    }
                 }
                 &.subtitle { 
                     font-size: $subtitle-week-font-size;
@@ -137,6 +134,7 @@ main.desktop {
                         }
                         
                         .seance_number {
+                            margin: 5px 10px;
                             color: $accordion-seance-number-color;
                             font-size: $accordion-seance-number-fontsize;
                         }
