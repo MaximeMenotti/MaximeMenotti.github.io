@@ -1,0 +1,27 @@
+{
+  "name": "learn-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
+  },
+  "dependencies": {
+    "add": "^2.0.6",
+    "framer-motion": "^4.1.11",
+    "next": "^10.0.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "sass": "^1.32.12",
+    "yarn": "^1.22.10"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^10.2.0",
+    "cross-env": "^7.0.3"
+  }
+}
