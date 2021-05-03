@@ -76,7 +76,7 @@ const Index = props => (
 
 Index.getInitialProps = async function() {
   const res = await fetch(
-    "https://my-json-server.typicode.com/wrongakram/demo/products"
+    "https://my-json-server.typicode.com/maximemenotti/demo/products"
   );
   const data = await res.json();
   return {
