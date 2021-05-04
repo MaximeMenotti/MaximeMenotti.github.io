@@ -1,0 +1,68 @@
+@keyframes like-gif {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+.card {
+  height: 400px; width: 630px;
+  background: linear-gradient(128deg, rgba(255,255,255,0.25) 35%, rgba(255,255,255,0.05) 100%);
+  border-radius: 20px;
+  border: solid rgba(255, 255, 255, 0.5) 1px;
+  border-bottom: solid rgba(255, 255, 255, 0.2) 1px;
+  border-right: solid rgba(255, 255, 255, 0.2) 1px;
+  overflow: hidden;
+  position: relative;
+
+  @supports not (backdrop-filter: none) {
+    .background {
+      background: linear-gradient(128deg, rgba(255,255,255,0.35) 35%, rgba(255,255,255,0.25) 100%);
+    }
+  }
+
+  .top {
+    display: flex; justify-content: space-between;
+    margin: 3rem 2.5rem;
+
+    .perso {
+      display: block;
+      width: 180px;
+      height: 180px;
+      margin: -10px 0 0 -30px;
+      background: url(https://user-images.githubusercontent.com/14292401/115416755-567e2100-a1f8-11eb-9941-412a046d5ef0.png) 0 0 no-repeat;
+      background-size: 900%;
+      animation: like-gif steps(8) 0.8s both 0.15s;
+    }
+
+    .social {
+      a {
+        margin-left: 1rem;
+        svg path {
+          fill: white;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    position: absolute; bottom: 0; left: 0;
+    margin: 3rem 2.5rem;
+  }
+
+  p {
+    justify-self: flex-end;
+    font-size: 2.3em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: white;
+    opacity: 0.5;
+
+    &.subtitle {
+      margin: 1rem 0 0;
+      font-size: 1.5em;
+    }
+  }
+}

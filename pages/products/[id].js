@@ -15,13 +15,13 @@ const fadeInUp = {
   initial: {
     y: 60,
     opacity: 0,
-    transition: { duration: 0.6, ease: easing }
+    transition: { duration: 0.2, ease: easing }
   },
   animate: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.6,
+      duration: 0.2,
       ease: easing
     }
   }
@@ -41,7 +41,7 @@ const Product = props => (
             animate={{ x: 0, opacity: 1 }}
             initial={{ x: 200, opacity: 0 }}
             exit={{ opacity: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.1 }}
           />
         </motion.div>
         <div className='product-details'>

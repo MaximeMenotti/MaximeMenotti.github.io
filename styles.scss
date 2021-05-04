@@ -9,6 +9,19 @@ body {
   overflow: hidden;
 }
 
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw; height: calc(100vh - 50px);
+  margin: 0; padding: 0;
+  background: #fc466b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fc466b, #3f5efb); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fc466b, #3f5efb);
+  background-size: cover;
+  background-position: center;
+}
+
 .container {
   width: 1540px;
   margin: 0 auto;
@@ -54,6 +67,7 @@ body {
       img {
         display: flex;
         margin: 0 auto;
+        width: 250px;
       }
       .product-info {
         position: absolute;
