@@ -1,12 +1,15 @@
-import {AnimatePresence} from "framer-motion"
+import {AnimateSharedLayout} from "framer-motion"
 import "../styles.scss";
+import Layout from "../components/Layout";
 
-function MyApp({ Component, pageProps, router }) {
+function App({ Component, pageProps, router }) {
   return (
-    <AnimatePresence exitBeforeEnter>
-      <Component {...pageProps} key={router.route}/>
-    </AnimatePresence>
+    <AnimateSharedLayout exitBeforeEnter>
+      <Layout>
+        <Component {...pageProps} key={router.route}/>
+      </Layout>
+    </AnimateSharedLayout>
   )
 }
 
-export default MyApp
+export default App

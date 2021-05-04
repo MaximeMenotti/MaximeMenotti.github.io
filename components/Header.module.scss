@@ -1,0 +1,18 @@
+.header {
+  background: white;
+  box-shadow: rgba(48,49,51,.1) 0 4px 8px;
+  display: flex;
+  justify-content: center;
+
+  a {
+    padding: 1rem 2rem;
+    outline: none;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+
+    &:hover {
+      color: rgba(0, 0, 0, 1);
+    }
+  }
+}
